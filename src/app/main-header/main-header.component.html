@@ -1,5 +1,10 @@
 <div class="bg-primary d-flex p-2 text-white center">
     <img class="image-responsive" src="../../assets/images/download.jpg" height="50px" width="50px" alt="Logo">
-    <h3 class="mx-auto mt-1">Ministry of Women and Child Development</h3>
-    <a src="https://wcd.nic.in/" class="pe-auto text-white">Go to Website</a>
+    <h3 class="mx-auto my-auto" *ngIf="privilegeAdmin">MINISTRY OF WOMEN & CHILD DEVELOPMENT</h3>
+    <h3 class="mx-auto my-auto" *ngIf="privilegeNone">MINISTRY OF WOMEN & CHILD DEVELOPMENT</h3>
+    <h3 class="mx-auto my-auto" *ngIf="privilegeTrainee">Support to Training and Employment Programme for Women (STEP)
+    </h3>
+    <h3 class="mx-auto my-auto" *ngIf="privilegeNGO">Non Governmental Organizations (NGOs)</h3>
+    <a src="https://wcd.nic.in/" class="pe-auto text-white my-auto">Go to Website</a>
 </div>
+<app-navbar></app-navbar>

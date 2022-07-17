@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-@Component({
-  selector: 'app-main-header',
-  templateUrl: './main-header.component.html',
-  styleUrls: ['./main-header.component.css']
-})
-export class MainHeaderComponent implements OnInit {
 
+@Component({
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class NavbarComponent implements OnInit {
   privilegeTrainee: boolean;
   privilegeAdmin: boolean;
   privilegeNGO: boolean;
@@ -15,6 +15,7 @@ export class MainHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.toggle();
   }
+
   toggle() {
     this.privilegeNone = true;
   }
