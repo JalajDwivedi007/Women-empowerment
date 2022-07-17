@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+
+}
+
+a:hover {
+    color: blueviolet;
+    text-decoration: blue;
+}
+
+/* div {
+    background-color: #c5d4f3;
+} */
