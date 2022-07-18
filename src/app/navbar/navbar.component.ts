@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginSignupApprovalService } from '../login-signup-approval.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit {
   privilegeAdmin: boolean;
   privilegeNGO: boolean;
   privilegeNone: boolean;
-  constructor(private loginService: LoginSignupApprovalService) { }
+  constructor(private loginService: LoginSignupApprovalService, private router: Router) { }
 
   ngOnInit(): void {
     this.toggle();
@@ -23,12 +24,15 @@ export class NavbarComponent implements OnInit {
     // this.privilegeTrainee = true;
     // this.privilegeNone = false;
     this.loginService.setTitle("Trainee");
+    // this.router.navigate(["login"]);
   }
   loginToggleAsNGO() {
     this.loginService.setTitle("NGO");
+    // this.router.navigate(["login"]);
   }
   loginToggleAsAdmin() {
     this.loginService.setTitle("Admin");
+    // this.router.navigate(["login"]);
   }
 
 }

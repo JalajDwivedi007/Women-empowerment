@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CriteriaComponent } from './criteria/criteria.component';
 // import { MainBodyComponent } from './main-body/main-body.component';
 import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'loginAdmin', component: LoginComponent },
+  { path: 'loginNGO', component: LoginComponent },
+  { path: 'criteriaNGO', component: CriteriaComponent }
 ]
 
 @NgModule({
