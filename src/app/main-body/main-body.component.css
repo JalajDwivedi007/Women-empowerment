@@ -1,5 +1,6 @@
 div {
-    background: url('../../assets/images/Download1.jpg');
+    /* background: url('../../assets/images/Download1.jpg'); */
+    background: #3b1ab2;
     width: relative;
     height: 550px;
     position: relative;
