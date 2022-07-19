@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { CriteriaComponent } from './criteria/criteria.component';
+import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CriteriaComponent } from './criteria/criteria.component';
     NavbarComponent,
     LoginComponent,
     MainComponent,
-    CriteriaComponent
+    CriteriaComponent,
+    PoliciesLegislationsComponent
   ],
   imports: [
     BrowserModule,
