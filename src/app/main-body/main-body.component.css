@@ -1,6 +1,10 @@
 div {
-    background: url('../../assets/images/Download1.jpg');
-    width: relative;
-    height: 550px;
+    /* background: url('../../assets/images/Download1.jpg'); */
+    background: #3b1ab2;
+    /* width: relative;
+    height: auto; */
     position: relative;
+    /* position: fixed; */
+    bottom: 0;
+    background-size: contain;
 }
