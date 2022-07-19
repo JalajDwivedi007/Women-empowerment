@@ -7,6 +7,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { MainBodyComponent } from './main-body/main-body.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { CriteriaComponent } from './criteria/criteria.component';
@@ -20,6 +21,7 @@ import { TraineeRegisterComponent } from './trainee-register/trainee-register.co
     MainFooterComponent,
     MainBodyComponent,
     NavbarComponent,
+    SignUpComponent,
     LoginComponent,
     MainComponent,
     CriteriaComponent,

@@ -1,0 +1,12 @@
+.signup-form {
+    width: 425px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    border: solid 1px black;
+}
+.btn-primary{
+    margin: 2px;
+}
+.form-group{
+    padding: 2px;
+}
