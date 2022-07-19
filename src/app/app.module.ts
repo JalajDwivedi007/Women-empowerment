@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
+import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PoliciesLegislationsComponent } from './policies-legislations/policies-
     LoginComponent,
     MainComponent,
     CriteriaComponent,
-    PoliciesLegislationsComponent
+    PoliciesLegislationsComponent,
+    TraineeRegisterComponent
   ],
   imports: [
     BrowserModule,
