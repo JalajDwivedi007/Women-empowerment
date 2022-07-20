@@ -10,7 +10,6 @@ export class MainHeaderComponent implements OnInit {
   privilegeAdmin: boolean;
   privilegeNGO: boolean;
   privilegeNone: boolean;
-  privilege: boolean;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,7 +17,6 @@ export class MainHeaderComponent implements OnInit {
   }
   toggle() {
     this.privilegeNone = true;
-    this.privilege = false;
   }
 
 }
