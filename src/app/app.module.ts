@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PoliciesLegislationsComponent } from './policies-legislations/policies-
     MainComponent,
     GuidelinesComponent,
     CriteriaComponent,
-    PoliciesLegislationsComponent
+    PoliciesLegislationsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
