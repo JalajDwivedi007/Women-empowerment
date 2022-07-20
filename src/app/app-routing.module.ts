@@ -4,8 +4,19 @@ import { GuidelinesComponent } from './guidelines/guidelines.component';
 // import { MainBodyComponent } from './main-body/main-body.component';
 import { LoginComponent } from './login/login.component';
 
+ 
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { CriteriaComponent } from './criteria/criteria.component';
+// import { MainBodyComponent } from './main-body/main-body.component';
+
+import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'loginAdmin', component: LoginComponent },
+  { path: 'loginNGO', component: LoginComponent },
+  { path: 'criteriaNGO', component: CriteriaComponent },
+  { path: 'poilicy-legislation', component: PoliciesLegislationsComponent },
+  {path:'sign-up',component: SignUpComponent},
   {path:'guidelines', component:GuidelinesComponent}
 ]
 
