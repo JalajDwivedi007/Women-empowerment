@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
 
@@ -23,6 +24,7 @@ import { PoliciesLegislationsComponent } from './policies-legislations/policies-
     SignUpComponent,
     LoginComponent,
     MainComponent,
+    GuidelinesComponent,
     CriteriaComponent,
     PoliciesLegislationsComponent
   ],
