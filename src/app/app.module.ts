@@ -10,12 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-<<<<<<< HEAD
 import { GuidelinesComponent } from './guidelines/guidelines.component';
-=======
 import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
->>>>>>> frontend
 
 @NgModule({
   declarations: [
@@ -27,12 +24,9 @@ import { PoliciesLegislationsComponent } from './policies-legislations/policies-
     SignUpComponent,
     LoginComponent,
     MainComponent,
-<<<<<<< HEAD
-    GuidelinesComponent
-=======
+    GuidelinesComponent,
     CriteriaComponent,
     PoliciesLegislationsComponent
->>>>>>> frontend
   ],
   imports: [
     BrowserModule,
