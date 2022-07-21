@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import { GuidelinesComponent } from './static-page/guidelines/guidelines.component';
 import { CriteriaComponent } from './static-page/criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
+import { FaqComponent } from './static-page/faq/faq.component';
+import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './static-page/about-us/about-us.component';
 
@@ -29,6 +31,8 @@ import { AboutUsComponent } from './static-page/about-us/about-us.component';
     GuidelinesComponent,
     CriteriaComponent,
     PoliciesLegislationsComponent,
+    FaqComponent,
+    FundingNormsComponent,
     TraineeRegisterComponent,
     AboutUsComponent
   ],
