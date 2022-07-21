@@ -9,6 +9,7 @@ import { CriteriaComponent } from './criteria/criteria.component';
 // import { MainBodyComponent } from './main-body/main-body.component';
 
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
+import { FundingNormsComponent } from './funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'loginNGO', component: LoginComponent },
   { path: 'criteriaNGO', component: CriteriaComponent },
   { path: 'poilicy-legislation', component: PoliciesLegislationsComponent },
+  {path:'funding-norms',component:FundingNormsComponent},
   { path: 'trainee-register', component: TraineeRegisterComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'guidelines', component: GuidelinesComponent },
