@@ -10,13 +10,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { GuidelinesComponent } from './guidelines/guidelines.component';
-import { CriteriaComponent } from './criteria/criteria.component';
-import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
-import { FaqComponent } from './faq/faq.component';
-import { FundingNormsComponent } from './funding-norms/funding-norms.component';
+import { GuidelinesComponent } from './static-page/guidelines/guidelines.component';
+import { CriteriaComponent } from './static-page/criteria/criteria.component';
+import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
+import { FaqComponent } from './static-page/faq/faq.component';
+import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutUsComponent } from './static-page/about-us/about-us.component';
+import { TrainingComponent } from './training/training.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FaqComponent,
     FundingNormsComponent,
     TraineeRegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,
