@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
+import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     GuidelinesComponent,
     CriteriaComponent,
     PoliciesLegislationsComponent,
+    TraineeRegisterComponent,
     AboutUsComponent
   ],
   imports: [
