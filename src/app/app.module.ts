@@ -17,6 +17,7 @@ import { FaqComponent } from './static-page/faq/faq.component';
 import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './static-page/about-us/about-us.component';
+import { TrainingComponent } from './training/training.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AboutUsComponent } from './static-page/about-us/about-us.component';
     FaqComponent,
     FundingNormsComponent,
     TraineeRegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,

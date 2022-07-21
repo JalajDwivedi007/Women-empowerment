@@ -11,6 +11,7 @@ import { FaqComponent } from './static-page/faq/faq.component';
 import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './static-page/about-us/about-us.component';
+import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'trainee-register', component: TraineeRegisterComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'guidelines', component: GuidelinesComponent },
-  { path: 'sign-up', component: SignUpComponent }
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'training', component: TrainingComponent }
 ]
 
 @NgModule({
