@@ -2,3 +2,7 @@ li {
     text-decoration: none;
     list-style: none;
 }
+
+ul {
+    margin-right: 2rem;
+}
