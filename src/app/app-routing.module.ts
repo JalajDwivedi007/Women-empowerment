@@ -9,9 +9,12 @@ import { CriteriaComponent } from './static-page/criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
 import { FaqComponent } from './static-page/faq/faq.component';
 import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
-import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './static-page/about-us/about-us.component';
 import { TrainingComponent } from './training/training.component';
+import { TraineeRegisterHomeComponent } from './trainee/trainee-register-home/trainee-register-home.component';
+import { TraineeCourseRegComponent } from './trainee/trainee-course-reg/trainee-course-reg.component';
+import { TraineeHostelRegComponent } from './trainee/trainee-hostel-reg/trainee-hostel-reg.component';
+import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/trainee-sukanya-reg.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -20,11 +23,14 @@ const routes: Routes = [
   { path: 'poilicy-legislation', component: PoliciesLegislationsComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'funding-norms', component: FundingNormsComponent },
-  { path: 'trainee-register', component: TraineeRegisterComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'guidelines', component: GuidelinesComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'training', component: TrainingComponent }
+  { path: 'training', component: TrainingComponent },
+  { path: 'trainee-register-home', component: TraineeRegisterHomeComponent },
+  { path: 'trainee-course-reg', component: TraineeCourseRegComponent },
+  { path: 'trainee-hostel-reg', component: TraineeHostelRegComponent },
+  { path: 'trainee-sukanya-reg', component: TraineeSukanyaRegComponent }
 ]
 
 @NgModule({
