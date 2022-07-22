@@ -15,6 +15,9 @@ import { TraineeRegisterHomeComponent } from './trainee/trainee-register-home/tr
 import { TraineeCourseRegComponent } from './trainee/trainee-course-reg/trainee-course-reg.component';
 import { TraineeHostelRegComponent } from './trainee/trainee-hostel-reg/trainee-hostel-reg.component';
 import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/trainee-sukanya-reg.component';
+import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
+import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
+import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -30,7 +33,10 @@ const routes: Routes = [
   { path: 'trainee-register-home', component: TraineeRegisterHomeComponent },
   { path: 'trainee-course-reg', component: TraineeCourseRegComponent },
   { path: 'trainee-hostel-reg', component: TraineeHostelRegComponent },
-  { path: 'trainee-sukanya-reg', component: TraineeSukanyaRegComponent }
+  { path: 'trainee-sukanya-reg', component: TraineeSukanyaRegComponent },
+  { path: 'ngo-course-register', component: NgoCourseRegisterComponent },
+  { path: 'ngo-mwcd-register', component: NgoMwcdRegisterComponent },
+  { path: 'ngo-register-home', component: NgoRegisterHomeComponent }
 ]
 
 @NgModule({
