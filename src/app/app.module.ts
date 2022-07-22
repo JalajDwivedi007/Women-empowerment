@@ -21,6 +21,10 @@ import { TraineeRegisterHomeComponent } from './trainee/trainee-register-home/tr
 import { TraineeCourseRegComponent } from './trainee/trainee-course-reg/trainee-course-reg.component';
 import { TraineeHostelRegComponent } from './trainee/trainee-hostel-reg/trainee-hostel-reg.component';
 import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/trainee-sukanya-reg.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
+import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
+import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/traine
     TraineeRegisterHomeComponent,
     TraineeCourseRegComponent,
     TraineeHostelRegComponent,
-    TraineeSukanyaRegComponent
+    TraineeSukanyaRegComponent,
+    ProfilePageComponent,
+    NgoCourseRegisterComponent,
+    NgoMwcdRegisterComponent,
+    NgoRegisterHomeComponent
   ],
   imports: [
     BrowserModule,
