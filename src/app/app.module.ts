@@ -15,9 +15,12 @@ import { CriteriaComponent } from './static-page/criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
 import { FaqComponent } from './static-page/faq/faq.component';
 import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
-import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './static-page/about-us/about-us.component';
 import { TrainingComponent } from './training/training.component';
+import { TraineeRegisterHomeComponent } from './trainee/trainee-register-home/trainee-register-home.component';
+import { TraineeCourseRegComponent } from './trainee/trainee-course-reg/trainee-course-reg.component';
+import { TraineeHostelRegComponent } from './trainee/trainee-hostel-reg/trainee-hostel-reg.component';
+import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/trainee-sukanya-reg.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,12 @@ import { TrainingComponent } from './training/training.component';
     PoliciesLegislationsComponent,
     FaqComponent,
     FundingNormsComponent,
-    TraineeRegisterComponent,
     AboutUsComponent,
-    TrainingComponent
+    TrainingComponent,
+    TraineeRegisterHomeComponent,
+    TraineeCourseRegComponent,
+    TraineeHostelRegComponent,
+    TraineeSukanyaRegComponent
   ],
   imports: [
     BrowserModule,
