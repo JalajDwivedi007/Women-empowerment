@@ -15,6 +15,7 @@ import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { NGOTraineeComponent } from './ngo-trainee/ngo-trainee.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CriteriaComponent,
     PoliciesLegislationsComponent,
     TraineeRegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    NGOTraineeComponent
   ],
   imports: [
     BrowserModule,

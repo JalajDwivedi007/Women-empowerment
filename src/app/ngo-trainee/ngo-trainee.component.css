@@ -1,0 +1,30 @@
+.section1 container {
+  display: flex;
+}
+
+.container hr {
+  height: 3px;
+  color: rgb(136, 136, 136);
+  border: none;
+}
+
+img {
+  float: right;
+  width: 350px;
+  height: 230px;
+  padding-left: 20px;
+}
+.img-left {
+  float: left;
+  width: 350px;
+  height: 230px;
+  padding-right: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
+}
