@@ -11,6 +11,8 @@ import { CriteriaComponent } from './criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { compileClassMetadata } from '@angular/compiler';
+import { NGOTraineeComponent } from './ngo-trainee/ngo-trainee.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -20,14 +22,15 @@ const routes: Routes = [
   { path: 'trainee-register', component: TraineeRegisterComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'guidelines', component: GuidelinesComponent },
-  { path: 'sign-up', component: SignUpComponent }
-]
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'ngo-trainee', component: NGOTraineeComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 // { path: '', component: HomeComponent },
 //   { path: 'products', component: ProductComponent },
 //   { path: 'about', component: AboutComponent },
