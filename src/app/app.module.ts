@@ -10,11 +10,21 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { GuidelinesComponent } from './guidelines/guidelines.component';
-import { CriteriaComponent } from './criteria/criteria.component';
-import { PoliciesLegislationsComponent } from './policies-legislations/policies-legislations.component';
-import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { GuidelinesComponent } from './static-page/guidelines/guidelines.component';
+import { CriteriaComponent } from './static-page/criteria/criteria.component';
+import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
+import { FaqComponent } from './static-page/faq/faq.component';
+import { FundingNormsComponent } from './static-page/funding-norms/funding-norms.component';
+import { AboutUsComponent } from './static-page/about-us/about-us.component';
+import { TrainingComponent } from './training/training.component';
+import { TraineeRegisterHomeComponent } from './trainee/trainee-register-home/trainee-register-home.component';
+import { TraineeCourseRegComponent } from './trainee/trainee-course-reg/trainee-course-reg.component';
+import { TraineeHostelRegComponent } from './trainee/trainee-hostel-reg/trainee-hostel-reg.component';
+import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/trainee-sukanya-reg.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
+import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
+import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +39,18 @@ import { AboutUsComponent } from './about-us/about-us.component';
     GuidelinesComponent,
     CriteriaComponent,
     PoliciesLegislationsComponent,
-    TraineeRegisterComponent,
-    AboutUsComponent
+    FaqComponent,
+    FundingNormsComponent,
+    AboutUsComponent,
+    TrainingComponent,
+    TraineeRegisterHomeComponent,
+    TraineeCourseRegComponent,
+    TraineeHostelRegComponent,
+    TraineeSukanyaRegComponent,
+    ProfilePageComponent,
+    NgoCourseRegisterComponent,
+    NgoMwcdRegisterComponent,
+    NgoRegisterHomeComponent
   ],
   imports: [
     BrowserModule,
