@@ -17,6 +17,7 @@ import { FaqComponent } from './faq/faq.component';
 import { FundingNormsComponent } from './funding-norms/funding-norms.component';
 import { TraineeRegisterComponent } from './trainee-register/trainee-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AdminNgoComponent } from './admin-ngo/admin-ngo.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FaqComponent,
     FundingNormsComponent,
     TraineeRegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AdminNgoComponent
   ],
   imports: [
     BrowserModule,
