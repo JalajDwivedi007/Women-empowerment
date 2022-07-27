@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { AdminNgoComponent } from './admin-ngo/admin-ngo.component';
 
 import { NGOTraineeComponent } from './ngo-trainee/ngo-trainee.component';
 import { GuidelinesComponent } from './static-page/guidelines/guidelines.component';
@@ -45,6 +46,8 @@ import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-h
     NGOTraineeComponent,
     FundingNormsComponent,
     AboutUsComponent,
+    AdminNgoComponent,
+    AboutUsComponent,
     TrainingComponent,
     TraineeRegisterHomeComponent,
     TraineeCourseRegComponent,
@@ -55,7 +58,10 @@ import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-h
     NgoMwcdRegisterComponent,
     NgoRegisterHomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
