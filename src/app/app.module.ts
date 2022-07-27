@@ -28,6 +28,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
 import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
+import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-h
     NgoCourseRegisterComponent,
     NgoMwcdRegisterComponent,
     NgoRegisterHomeComponent,
+    AdminTraineeComponent,
   ],
   imports: [
     BrowserModule,
