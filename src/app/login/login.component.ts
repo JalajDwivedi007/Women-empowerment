@@ -44,19 +44,19 @@ export class LoginComponent implements OnInit {
         this.loginService.setLoginStatus(true);
         this.loginService.setUser("trainee")
 
-        // this.router.navigate(["/"]);
+        this.router.navigate(["/"]);
       }
       if (this.info["user_type"] === "Admin") {
         console.log("Admin");
         this.loginService.setUser("Admin")
         this.loginService.setLoginStatus(true);
-        // this.router.navigate(["trainee-hostel-reg"])
+        this.router.navigate(["/"])
       }
       if (this.info["user_type"] === "NGO") {
         console.log("NGO");
         this.loginService.setUser("NGO")
         this.loginService.setLoginStatus(true);
-        // this.router.navigate(["ngo-register-home"])
+        this.router.navigate(["/"])
       }
     })
 

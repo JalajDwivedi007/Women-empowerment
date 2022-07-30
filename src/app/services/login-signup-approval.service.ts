@@ -41,4 +41,8 @@ export class LoginSignupApprovalService {
     console.log(data)
     return this.http.post(`${this.url}/login`, data = data);
   }
+  postDetails(data: any) {
+    console.log(data);
+    return this.http.post(`${this.url}/signup`, data = data)
+  }
 }

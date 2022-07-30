@@ -6,40 +6,43 @@
     <hr>
     <div class="form-group">
       <label>Username</label>
-      <input type="text" class="form-control" name="username" required="required">
+      <input type="text" class="form-control" name="username" required="required" [(ngModel)]="username">
     </div>
     <div class="form-group">
       <label>Email Address</label>
-      <input type="email" class="form-control" name="email" required="required">
+      <input type="email" class="form-control" name="email" required="required" [(ngModel)]="email">
     </div>
     <div class="form-group">
       <label>Contact No</label>
-      <input type="tel" class="form-control" name="contact" required="required">
+      <input type="tel" class="form-control" name="contact" required="required" [(ngModel)]="mobile">
     </div>
     <div class="form-group">
       <label>DOB</label>
-      <input type="date" class="form-control" name="dob" required="required">
+      <input type="date" class="form-control" name="dob" required="required" [(ngModel)]="dob">
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" class="form-control" name="password" required="required">
+      <input type="password" class="form-control" name="password" required="required" [(ngModel)]="password">
     </div>
     <div class="form-group">
       <label>Confirm Password</label>
-      <input type="password" class="form-control" name="confirm_password" required="required">
+      <input type="password" class="form-control" name="confirm_password" required="required"
+        [(ngModel)]="confirmpassword">
+      {{confirmpassword}}
     </div>
     <div class="form-group">
       <label>Registering as</label>
       <!-- <input type="dropdown" class="form-control" name="user_type" required="required"> -->
-      <select name="user_type" class="form-control" required="required">
+      <select name="user_type" class="form-control" required="required" [(ngModel)]="user_type">
         <option value="" disabled selected>Select your option</option>
-        <option value="Trainee">Trainee</option>
+        <option value="trainee">Trainee</option>
         <option value="NGO">NGO</option>
         <option value="Admin">Admin</option>
       </select>
+      <!-- {{user_type}} -->
     </div>
     <div class="form-group text-center mt-3">
-      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Sign Up</button>
     </div>
   </form>
   <div class="text-center mt-2">Already have an account? <a href="#" routerLink="/login">Login here</a></div>

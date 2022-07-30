@@ -7,9 +7,25 @@ import { HostelTraineeService } from 'src/app/hostel-trainee.service';
 })
 export class TraineeHostelRegComponent implements OnInit {
   firstname: string;
+  middlename: string;
+  lastname: string;
+  state: string;
+  city: string;
+  address: string;
+  traineePan: string;
+  traineeEducation: string;
+  traineeAadhaar: number;
+  gFirstname: string;
+  gMiddlename: string;
+  gLastname: string;
+  gEducationDetails: string;
+  gRelation: string;
+  gMobile: number;
+  gEmail: string;
   hName: string;
   hLocation: string;
   hRanBy: string;
+  // aadhar: number;
   file: File;
   constructor(private hostelService: HostelTraineeService) { }
 
@@ -23,7 +39,23 @@ export class TraineeHostelRegComponent implements OnInit {
       hName: this.hName,
       hLocation: this.hLocation,
       hRanBy: this.hRanBy,
-      file: this.file
+      file: this.file,
+      firstname: this.firstname,
+      middlename: this.middlename,
+      lastname: this.lastname,
+      state: this.state,
+      city: this.city,
+      address: this.address,
+      traineePan: this.traineePan,
+      traineeEducation: this.traineeEducation,
+      traineeAadhaar: this.traineeAadhaar,
+      gFirstname: this.gFirstname,
+      gMiddlename: this.gMiddlename,
+      gLastname: this.gLastname,
+      gEducationDetails: this.gEducationDetails,
+      gRelation: this.gRelation,
+      gMobile: this.gMobile,
+      gEmail: this.gEmail
       // traineeFirstname: this.firstname
 
     }

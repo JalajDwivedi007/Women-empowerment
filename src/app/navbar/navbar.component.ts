@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   privilegeNGO: boolean;
   privilegeNone: boolean;
   execute: boolean = false;
+  userOption: string;
   isLoggedIn: boolean;
   user: string;
   flag: number = 0;
@@ -31,7 +32,7 @@ export class NavbarComponent implements OnInit {
         this.ngOnInit();
       }
       this.viewNavbar(this.isLoggedIn);
-    }, 5000);
+    }, 1000);
     // while (this.isLoggedIn) {
     //   this.privilegeNone = true;
     //   this.isLoggedIn = this.loginService.getLoginStatus();
@@ -78,6 +79,31 @@ export class NavbarComponent implements OnInit {
         this.privilegeNGO = true;
       }
     }
+  }
+  check() {
+    if (this.userOption === "logout") {
+      this.logout()
+    }
+    if (this.userOption === "profile") {
+      //
+    }
+  }
+  logout() {
+    this.ngOnInit();
+    // this.isLoggedIn = false;
+    // if (this.user === "Admin") {
+    //   this.privilegeAdmin = false;
+    //   this.privilegeNone = true;
+    // }
+    // if (this.user === "NGO") {
+    //   this.privilegeNGO = false;
+    //   this.privilegeNone = true;
+    // }
+    // if (this.user === "trainee") {
+    //   this.privilegeTrainee = false;
+    //   this.privilegeNone = true;
+    // }
+    this.router.navigate(['/'])
   }
   // ngAfterViewInit() {
   //   // this.isLoggedIn = this.loginService.getLoginStatus();
