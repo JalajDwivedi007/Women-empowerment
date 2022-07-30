@@ -19,11 +19,12 @@ export class NavbarComponent implements OnInit {
   constructor(
     private loginService: LoginSignupApprovalService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.privilegeNone = true;
-    setTimeout(() => {                           //<<<---using ()=> syntax
+    setTimeout(() => {
+      //<<<---using ()=> syntax
 
       this.isLoggedIn = this.loginService.getLoginStatus();
       console.log(this.isLoggedIn);
@@ -59,24 +60,22 @@ export class NavbarComponent implements OnInit {
     if (this.isLoggedIn) {
       // this.toggle();
       console.log(this.isLoggedIn);
-    }
-    else {
+    } else {
       // this.privilegeNone = true;
       // this.ngOnInit();
     }
   }
   viewNavbar(login: boolean) {
-
     if (login) {
       this.privilegeNone = false;
       this.user = this.loginService.getUser();
-      if (this.user === "Admin") {
+      if (this.user === 'Admin') {
         this.privilegeAdmin = true;
       }
-      if (this.user === "trainee") {
+      if (this.user === 'trainee') {
         this.privilegeTrainee = true;
       }
-      if (this.user === "NGO") {
+      if (this.user === 'NGO') {
         this.privilegeNGO = true;
       }
     }
@@ -123,9 +122,10 @@ export class NavbarComponent implements OnInit {
   // }
 
   toggle() {
+    this.privilegeNGO = true;
     // this.privilegeNone = true;
     let user = this.loginService.getUser();
-    console.log(user)
+    console.log(user);
     // if (user !== null) {
     //   this.privilegeNone = true;
     // }
@@ -169,26 +169,22 @@ export class NavbarComponent implements OnInit {
   }
   userSet() {
     let user = this.loginService.getUser();
-    console.log("Inside navbar")
-    console.log(user)
-    if (user === "Admin") {
+    console.log('Inside navbar');
+    console.log(user);
+    if (user === 'Admin') {
       // this.privilegeNone=false;
       this.privilegeAdmin = true;
-      console.log("Admin")
-    }
-    else if (user === "NGO") {
+      console.log('Admin');
+    } else if (user === 'NGO') {
       // this.privilegeNone=false;
-      console.log("NGO")
+      console.log('NGO');
       this.privilegeNGO = true;
-    }
-    else if (user === "trainee") {
+    } else if (user === 'trainee') {
       // this.privilegeNone=false;
       this.privilegeTrainee = true;
-      console.log("Trainee")
-    }
-    else {
+      console.log('Trainee');
+    } else {
       this.privilegeNone = true;
     }
   }
-
 }
