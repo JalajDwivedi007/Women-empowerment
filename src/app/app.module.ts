@@ -25,6 +25,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
 import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-h
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
