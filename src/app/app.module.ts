@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
     NgoRegisterHomeComponent,
     TraineeInfoComponent,
     AdminTraineeComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
