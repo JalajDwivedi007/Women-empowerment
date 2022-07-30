@@ -5,6 +5,11 @@ import { GuidelinesComponent } from './static-page/guidelines/guidelines.compone
 import { LoginComponent } from './login/login.component';
 
 import { SignUpComponent } from './sign-up/sign-up.component';
+
+// import { MainBodyComponent } from './main-body/main-body.component';
+
+import { compileClassMetadata } from '@angular/compiler';
+import { NGOTraineeComponent } from './ngo-trainee/ngo-trainee.component';
 import { CriteriaComponent } from './static-page/criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
 import { FaqComponent } from './static-page/faq/faq.component';
@@ -29,6 +34,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'guidelines', component: GuidelinesComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'ngo-trainee', component: NGOTraineeComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'trainee-register-home', component: TraineeRegisterHomeComponent },
   { path: 'trainee-course-reg', component: TraineeCourseRegComponent },
@@ -36,14 +42,14 @@ const routes: Routes = [
   { path: 'trainee-sukanya-reg', component: TraineeSukanyaRegComponent },
   { path: 'ngo-course-register', component: NgoCourseRegisterComponent },
   { path: 'ngo-mwcd-register', component: NgoMwcdRegisterComponent },
-  { path: 'ngo-register-home', component: NgoRegisterHomeComponent }
-]
+  { path: 'ngo-register-home', component: NgoRegisterHomeComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 // { path: '', component: HomeComponent },
 //   { path: 'products', component: ProductComponent },
 //   { path: 'about', component: AboutComponent },

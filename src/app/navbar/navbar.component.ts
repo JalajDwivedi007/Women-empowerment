@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
   privilegeTrainee: boolean;
@@ -15,7 +15,11 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
   user: string;
   flag: number = 0;
-  constructor(private loginService: LoginSignupApprovalService, private router: Router) { }
+  constructor(
+    private loginService: LoginSignupApprovalService,
+    private router: Router
+  ) { }
+
   ngOnInit(): void {
     this.privilegeNone = true;
     setTimeout(() => {                           //<<<---using ()=> syntax
@@ -126,15 +130,15 @@ export class NavbarComponent implements OnInit {
   loginToggleAsTrainee() {
     // this.privilegeTrainee = true;
     // this.privilegeNone = false;
-    this.loginService.setTitle("Trainee");
+    this.loginService.setTitle('Trainee');
     // this.router.navigate(["login"]);
   }
   loginToggleAsNGO() {
-    this.loginService.setTitle("NGO");
+    this.loginService.setTitle('NGO');
     // this.router.navigate(["login"]);
   }
   loginToggleAsAdmin() {
-    this.loginService.setTitle("Admin");
+    this.loginService.setTitle('Admin');
     // this.router.navigate(["login"]);
   }
   userSet() {

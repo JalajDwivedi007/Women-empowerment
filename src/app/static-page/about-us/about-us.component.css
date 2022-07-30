@@ -4,7 +4,7 @@
 
 .container hr {
   height: 5px;
-  color: rgb(7, 76, 196);
+  color: rgb(1, 26, 69);
   border: none;
 }
 
@@ -17,7 +17,7 @@ img {
 h5 {
   text-decoration: underline;
   text-decoration-color: rgb(248, 176, 114);
-  text-decoration-thickness: 5px;
+  text-decoration-thickness: 3px;
 }
 
 a {

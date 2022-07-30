@@ -10,6 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { AdminNgoComponent } from './admin-ngo/admin-ngo.component';
+
+import { NGOTraineeComponent } from './ngo-trainee/ngo-trainee.component';
 import { GuidelinesComponent } from './static-page/guidelines/guidelines.component';
 import { CriteriaComponent } from './static-page/criteria/criteria.component';
 import { PoliciesLegislationsComponent } from './static-page/policies-legislations/policies-legislations.component';
@@ -27,6 +30,8 @@ import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-regis
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
+import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import { FormsModule } from '@angular/forms';
     CriteriaComponent,
     PoliciesLegislationsComponent,
     FaqComponent,
+    NGOTraineeComponent,
     FundingNormsComponent,
+    AboutUsComponent,
+    AdminNgoComponent,
     AboutUsComponent,
     TrainingComponent,
     TraineeRegisterHomeComponent,
@@ -52,7 +60,9 @@ import { FormsModule } from '@angular/forms';
     ProfilePageComponent,
     NgoCourseRegisterComponent,
     NgoMwcdRegisterComponent,
-    NgoRegisterHomeComponent
+    NgoRegisterHomeComponent,
+    TraineeInfoComponent,
+    AdminTraineeComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +71,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
