@@ -3,14 +3,19 @@
     <h3 class="mx-auto d-flex">Login As {{privilege}}</h3>
     <hr>
     <label for="username">Username:</label>
-    <input type="text" name="username" class="mt-1 mb-1">
+    <input type="text" name="username" class="mt-1 mb-1" [(ngModel)]="username">
+    <!-- {{username}} -->
     <label for="password">Password:</label>
-    <input type="text" name="password" class="mt-1 mb-1">
-    <button class="btn btn-primary mt-1 mb-1">Login</button>
+    <input type="text" name="password" class="mt-1 mb-1" [(ngModel)]="password">
+    <!-- {{password}} -->
+    <button class="btn btn-primary mt-1 mb-1" (click)="onLogin()">Login</button>
     <p class="mt-2">Not registered yet? <a href="#" class="text-primary cursor-pointer" routerLink="/sign-up">Create
             Account</a></p>
     <hr>
     <a href="#" class="text-primary cursor-pointer">Forgot Password</a>
+    <!-- <div *ngFor="let item of items">
+        <p>{{item.id}}</p>
+    </div> -->
 </div>
 <!--Empty div to fix styling-->
 <div class="my-auto" style="height: 10.8rem;"></div>

@@ -28,6 +28,9 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
 import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 
 @NgModule({
@@ -58,13 +61,16 @@ import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
     NgoCourseRegisterComponent,
     NgoMwcdRegisterComponent,
     NgoRegisterHomeComponent,
+    TraineeInfoComponent,
     AdminTraineeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
