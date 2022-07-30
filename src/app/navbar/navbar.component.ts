@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   }
 
   toggle() {
-    this.privilegeTrainee = true;
+    this.privilegeNGO = true;
   }
   loginToggleAsTrainee() {
     // this.privilegeTrainee = true;
