@@ -8,6 +8,8 @@ import { NgoRegisterService } from 'src/app/ngo-register.service';
   styleUrls: ['./ngo-mwcd-register.component.css'],
 })
 export class NgoMwcdRegisterComponent implements OnInit {
+  username: string;
+  status: string;
   ngoName: String;
   members: Number;
   workAreas: String;
@@ -34,7 +36,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeAadhar: Number;
   file: File;
 
-  constructor(private ngoService: NgoRegisterService) {}
+  constructor(private ngoService: NgoRegisterService) { }
 
   ngOnInit(): void {
     // this.getInfo();

@@ -40,6 +40,8 @@ export class CourseTraineeService {
     return this.http.get(`${this.url}/trainings`);
   }
   downloadFile(id: number) {
-    return this.http.get(`${this.url}/womenempowerment/download/` + id);
+    return this.http.get(`${this.url}/womenempowerment/download/` + id, {
+      responseType: 'blob'
+    });
   }
 }

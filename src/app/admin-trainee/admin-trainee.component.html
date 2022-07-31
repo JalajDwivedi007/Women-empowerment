@@ -16,7 +16,8 @@
       <td>{{result.a.applicationtype}}</td>
       <td>{{result.title}}</td>
       <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id)">Click Here</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id,result.a.d.fileName)" class="text-primary">
+        Click Here</td>
       <td>
         <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
         <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
@@ -42,7 +43,8 @@
       <td>{{result1.a.applicationtype}}</td>
       <td>{{result1.hName}}</td>
       <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id)">Click Here</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id,result1.a.d.fileName)" class="text-primary">
+        Click Here</td>
       <td>
         <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
         <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
@@ -68,7 +70,8 @@
       <td>{{result2.a.applicationtype}}</td>
       <td>{{result2.ssyname}}</td>
       <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id)">Click Here</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id,result2.a.d.fileName)" class="text-primary">
+        Click Here</td>
       <td>
         <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
         <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
