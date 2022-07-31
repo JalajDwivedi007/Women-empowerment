@@ -1,25 +1,78 @@
-<div class="container p-3">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Application No:</th>
-          <th scope="col">Username</th>
-          <th scope="col">Application type</th>
-          <th scope="col">Application status</th>
-          <th scope="col">Approval/Rejection</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Laveen</td>
-          <td>Agri Training</td>
-          <td>Pending</td>
-          <td>
-            <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
-            <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>  
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+  <h3 class="mx-auto">Training Applications</h3>
+  <table class="table">
+    <tr>
+      <th scope="col">Application No:</th>
+      <th scope="col">Username</th>
+      <th scope="col">Application type</th>
+      <th scope="col">Application Name</th>
+      <th scope="col">Application status</th>
+      <th scope="col">Document Uploaded</th>
+      <th scope="col">Approval/Rejection</th>
+    </tr>
+    <tr *ngFor="let result of results">
+      <th scope="row">{{result.a.applicationId}}</th>
+      <td>{{result.a.traineeFirstname}}</td>
+      <td>{{result.a.applicationtype}}</td>
+      <td>{{result.title}}</td>
+      <td>Pending</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id)">Click Here</td>
+      <td>
+        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+  <h3 class="mx-auto">Hostel Applications</h3>
+  <table class="table">
+    <tr>
+      <th scope="col">Application No:</th>
+      <th scope="col">Username</th>
+      <th scope="col">Application type</th>
+      <th scope="col">Application Name</th>
+      <th scope="col">Application status</th>
+      <th scope="col">Document Uploaded</th>
+      <th scope="col">Approval/Rejection</th>
+    </tr>
+    <tr *ngFor="let result1 of results1">
+      <th scope="row">{{result1.a.applicationId}}</th>
+      <td>{{result1.a.traineeFirstname}}</td>
+      <td>{{result1.a.applicationtype}}</td>
+      <td>{{result1.hName}}</td>
+      <td>Pending</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id)">Click Here</td>
+      <td>
+        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+  <h3 class="mx-auto">SSY Applications</h3>
+  <table>
+    <tr>
+      <th scope="col">Application No:</th>
+      <th scope="col">Username</th>
+      <th scope="col">Application type</th>
+      <th scope="col">Application Name</th>
+      <th scope="col">Application status</th>
+      <th scope="col">Document Uploaded</th>
+      <th scope="col">Approval/Rejection</th>
+    </tr>
+    <tr *ngFor="let result2 of results2">
+      <th scope="row">{{result2.a.applicationId}}</th>
+      <td>{{result2.a.traineeFirstname}}</td>
+      <td>{{result2.a.applicationtype}}</td>
+      <td>{{result2.ssyname}}</td>
+      <td>Pending</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id)">Click Here</td>
+      <td>
+        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+      </td>
+    </tr>
+  </table>
+</div>
