@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgoRegisterService } from 'src/app/ngo-register.service';
+import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 
 @Component({
   selector: 'app-ngo-mwcd-register',
@@ -36,15 +37,21 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeAadhar: Number;
   file: File;
 
-  constructor(private ngoService: NgoRegisterService) { }
+  constructor(private ngoService: NgoRegisterService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     // this.getInfo();
   }
+  getusername() {
+    this.username = this.loginService.getUsername();
+  }
 
   onSubmit() {
+    this.getusername()
     console.log(this.file);
     let data = {
+      username: this.username,
+      status: "pending",
       ngoName: this.ngoName,
       members: this.members,
       workAreas: this.workAreas,
