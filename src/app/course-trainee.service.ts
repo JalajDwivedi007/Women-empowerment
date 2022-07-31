@@ -32,9 +32,14 @@ export class CourseTraineeService {
     params = params.append("gRelation", data.grelation)
     params = params.append("gMobile", data.gmobile)
     params = params.append("gEmail", data.gemail)
+    params = params.append("username", data.username)
+    params = params.append("status", data.status)
     return this.http.post(`${this.url}/training`, formData, { params: params });
   }
   getData() {
     return this.http.get(`${this.url}/trainings`);
+  }
+  downloadFile(id: number) {
+    return this.http.get(`${this.url}/womenempowerment/download/` + id);
   }
 }

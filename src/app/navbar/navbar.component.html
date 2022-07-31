@@ -6,13 +6,15 @@
         <a href="#" class="text-white traineeAnchor" routerLink="/training">TRAINING SECTORS</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/ngo-trainee">NGOs</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/trainee-register-home">REGISTRATION</a>
-        <a href="#" class="text-white traineeAnchor">STATUS</a>
+        <a href="#" class="text-white traineeAnchor" routerLink="/trainee-info">STATUS</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/faq">FAQ</a>
-        <select class="ngoAnchor" placeholder="PROFILE">
+        <a href="#" class="text-white traineeAnchor">PROFILE</a>
+        <a href="#" class="text-white traineeAnchor" (click)="logout()">LOGOUT</a>
+        <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>
             <option value="profile"><a href="#">PROFILE</a></option>
             <option value="logout"><a href="#">LOGOUT</a></option>
-        </select>
+        </select> -->
     </nav>
 </div>
 <div class="bg-primary" *ngIf="privilegeNGO">
@@ -23,12 +25,13 @@
         <a href="#" class="text-white ngoAnchor" routerLink="/funding-norms">FUNDING NORMS FAQ</a>
         <a href="#" class="text-white ngoAnchor" routerLink="/ngo-register-home">REGISTER</a>
         <a href="#" class="text-white ngoAnchor">STATUS</a>
-        <!-- <a href="#" class="text-white ngoAnchor">PROFILE</a> -->
-        <select class="ngoAnchor" placeholder="PROFILE">
+        <a href="#" class="text-white ngoAnchor">PROFILE</a>
+        <a href="#" class="text-white ngoAnchor" (click)="logout()">LOGOUT</a>
+        <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>
             <option value="profile"><a href="#">PROFILE</a></option>
             <option value="logout"><a href="#">LOGOUT</a></option>
-        </select>
+        </select> -->
     </nav>
 </div>
 <div class="bg-primary" *ngIf="privilegeAdmin">
@@ -36,12 +39,14 @@
         <a href="#" class="text-white adminAnchor p-1">HOME</a>
         <a href="#" class="text-white adminAnchor p-1" routerLink="/about-us">ABOUT US</a>
         <a href="#" class="text-white adminAnchor p-1">NGO</a>
-        <a href="#" class="text-white adminAnchor p-1">TRAINEES</a>
-        <select class="ngoAnchor" placeholder="PROFILE">
+        <a href="#" class="text-white adminAnchor p-1" routerLink="/admin-trainee">TRAINEES</a>
+        <a href="#" class="text-white adminAnchor p-1">PROFILE</a>
+        <a href="#" class="text-white adminAnchor p-1" (click)="logout()">LOGOUT</a>
+        <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>
             <option value="profile"><a href="#">PROFILE</a></option>
             <option value="logout"><a href="#">LOGOUT</a></option>
-        </select>
+        </select> -->
     </nav>
 </div>
 <div class="bg-primary" *ngIf="privilegeNone">

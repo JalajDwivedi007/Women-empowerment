@@ -24,6 +24,8 @@ import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course
 import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
+import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -44,7 +46,9 @@ const routes: Routes = [
   { path: 'ngo-course-register', component: NgoCourseRegisterComponent },
   { path: 'ngo-mwcd-register', component: NgoMwcdRegisterComponent },
   { path: 'ngo-register-home', component: NgoRegisterHomeComponent },
-  { path: '', component: HomePageComponent }
+  { path: '', component: HomePageComponent },
+  { path: 'trainee-info', component: TraineeInfoComponent },
+  { path: 'admin-trainee', component: AdminTraineeComponent }
 ];
 
 @NgModule({
