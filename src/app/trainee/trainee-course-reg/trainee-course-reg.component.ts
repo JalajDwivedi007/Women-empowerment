@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseTraineeService } from 'src/app/course-trainee.service';
 import { LoginComponent } from 'src/app/login/login.component';
+import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 
 @Component({
   selector: 'app-trainee-course-reg',
@@ -8,55 +9,64 @@ import { LoginComponent } from 'src/app/login/login.component';
   styleUrls: ['./trainee-course-reg.component.css']
 })
 export class TraineeCourseRegComponent implements OnInit {
-  firstname:string;
-  middlename:string;
-  lastname:string;
-  state:string;
-  city:string;
-  address:string;
-  aadhaar:bigint;
-  pan:String;
-  education:string;
-  gfirstname:string;
-  gmiddlename:string;
-  glastname:string;
-  geducation:string;
-  grelation:string;
-  gmobile:bigint;
-  gemail:string;
-  title:string;
-  providedBy:string;
-  aboutTra:string;
+  username: string;
+  status: string;
+  firstname: string;
+  middlename: string;
+  lastname: string;
+  state: string;
+  city: string;
+  address: string;
+  aadhaar: bigint;
+  pan: String;
+  education: string;
+  gfirstname: string;
+  gmiddlename: string;
+  glastname: string;
+  geducation: string;
+  grelation: string;
+  gmobile: bigint;
+  gemail: string;
+  title: string;
+  providedBy: string;
+  aboutTra: string;
   file: File;
 
-  constructor(private courseService: CourseTraineeService) { }
+  constructor(private courseService: CourseTraineeService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     this.getInfo();
-  }
 
+  }
+  usernameSet() {
+    this.username = this.loginService.getUsername();
+    console.log(this.username);
+  }
   onSubmit() {
+    this.usernameSet();
     console.log(this.file)
     let data = {
-      firstname:this.firstname,
-      middlename:this.middlename,
-      lastname:this.lastname,
-      state:this.state,
-      city:this.city,
-      address:this.address,
-      aadhaar:this.aadhaar,
-      pan:this.pan,
-      education:this.education,
-      gfirstname:this.gfirstname,
-      gmiddlename:this.gmiddlename,
-      glastname:this.glastname,
-      geducation:this.geducation,
-      grelation:this.grelation,
-      gmobile:this.gmobile,
-      gemail:this.gemail,
-      title:this.title,
-      providedBy:this.providedBy,
-      aboutTra:this.aboutTra,
+      username: this.username,
+      status: "pending",
+      firstname: this.firstname,
+      middlename: this.middlename,
+      lastname: this.lastname,
+      state: this.state,
+      city: this.city,
+      address: this.address,
+      aadhaar: this.aadhaar,
+      pan: this.pan,
+      education: this.education,
+      gfirstname: this.gfirstname,
+      gmiddlename: this.gmiddlename,
+      glastname: this.glastname,
+      geducation: this.geducation,
+      grelation: this.grelation,
+      gmobile: this.gmobile,
+      gemail: this.gemail,
+      title: this.title,
+      providedBy: this.providedBy,
+      aboutTra: this.aboutTra,
       file: this.file
 
     }

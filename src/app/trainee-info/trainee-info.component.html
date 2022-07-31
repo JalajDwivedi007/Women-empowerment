@@ -1,31 +1,24 @@
 <section class="sec mt-3 mb-3">
-  <div class="container">
+  <div class="card bg-white mx-auto" style="width:60rem;">
     <h3 class="text-center">Table</h3>
     <hr />
     <table class="table table-striped mt-3">
       <thead>
         <tr>
           <th scope="col">Sr. No</th>
-          <th scope="col">Application Number</th>
+          <th scope="col">Application Name</th>
           <th scope="col">Application Type</th>
           <th scope="col">Application Description</th>
           <th scope="col">Application Status</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Approved</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Rejected</td>
+        <tr *ngFor="let item of items1">
+          <td>{{item.a.applicationId}}</td>
+          <td>{{item.a.traineeFirstname+" "+item.a.traineeLastname}}</td>
+          <td></td>
+          <td>{{item.title}}</td>
+          <td>{{item.a.status}}</td>
         </tr>
       </tbody>
     </table>

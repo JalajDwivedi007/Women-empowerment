@@ -10,6 +10,7 @@ export class LoginSignupApprovalService {
   titleset: string;
   user: string;
   loginStatus: boolean = false;
+  username: string;
   constructor(private http: HttpClient) { }
   setTitle(title: string) {
     this.titleset = title;
@@ -44,5 +45,11 @@ export class LoginSignupApprovalService {
   postDetails(data: any) {
     console.log(data);
     return this.http.post(`${this.url}/signup`, data = data)
+  }
+  getUsername() {
+    return this.username;
+  }
+  setUsername(username: string) {
+    this.username = username;
   }
 }

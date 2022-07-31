@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     console.log(this.password)
     this.loginService.getLoginValidation(login).subscribe((res) => {
       this.info = res;
+      this.loginService.setUsername(this.username);
       console.log(res["user_type"]);
       if (this.info["user_type"] == "trainee") {
         console.log(this.info["user_type"]);
