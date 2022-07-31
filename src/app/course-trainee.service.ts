@@ -44,4 +44,9 @@ export class CourseTraineeService {
       responseType: 'blob'
     });
   }
+  changeApplicationStatus(id: number, status: string) {
+    let params = new HttpParams();
+    params = params.append('status', status);
+    return this.http.put(`${this.url}/changeApplicationStatus/` + id, {}, { params: params });
+  }
 }

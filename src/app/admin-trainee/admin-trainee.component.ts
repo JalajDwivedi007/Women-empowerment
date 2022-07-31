@@ -14,7 +14,7 @@ export class AdminTraineeComponent implements OnInit {
   results: any;
   results1: any;
   results2: any;
-
+  appPen: boolean = true;
   constructor(private courseService: CourseTraineeService, private hostelService: HostelTraineeService, private sukanyaService: SukanyaTraineeService) { }
 
   ngOnInit(): void {
@@ -43,6 +43,18 @@ export class AdminTraineeComponent implements OnInit {
   documentDownload(id: number, filename: string) {
     this.courseService.downloadFile(id).subscribe(blob => fileSaver.saveAs(blob, filename));
 
+  }
+  approveApp(id: number) {
+    this.courseService.changeApplicationStatus(id, "Approved").subscribe((res) => {
+      console.log(id);
+      this.appPen = false;
+    })
+  }
+  rejectApp(id: number) {
+    this.courseService.changeApplicationStatus(id, "Rejected").subscribe((res) => {
+      console.log(id);
+      this.appPen = false;
+    })
   }
 }
 

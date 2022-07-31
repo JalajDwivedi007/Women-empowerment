@@ -20,6 +20,20 @@
           <td>{{item.title}}</td>
           <td>{{item.a.status}}</td>
         </tr>
+        <tr *ngFor="let item of items2">
+          <td>{{item.a.applicationId}}</td>
+          <td>{{item.a.traineeFirstname+" "+item.a.traineeLastname}}</td>
+          <td>{{item.a.applicationtype}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.a.status}}</td>
+        </tr>
+        <tr *ngFor="let item of items3">
+          <td>{{item.a.applicationId}}</td>
+          <td>{{item.a.traineeFirstname+" "+item.a.traineeLastname}}</td>
+          <td>{{item.a.applicationtype}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.a.status}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
