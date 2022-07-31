@@ -37,6 +37,8 @@ export class NgoRegisterService {
     params = params.append('inchargePan', data.inchargePan);
     params = params.append('inchargeEdu', data.inchargeEdu);
     params = params.append('inchargeAadhaar', data.inchargeAadhar);
+    params = params.append("username", data.username);
+    params = params.append("status", data.status);
     return this.http.post(`${this.url}/ngo`, formData, { params: params });
   }
   getData() {

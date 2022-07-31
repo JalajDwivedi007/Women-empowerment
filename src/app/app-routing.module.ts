@@ -26,6 +26,7 @@ import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-h
 import { HomePageComponent } from './home-page/home-page.component';
 import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
+import { AdminNgoComponent } from './admin-ngo/admin-ngo.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -48,7 +49,8 @@ const routes: Routes = [
   { path: 'ngo-register-home', component: NgoRegisterHomeComponent },
   { path: '', component: HomePageComponent },
   { path: 'trainee-info', component: TraineeInfoComponent },
-  { path: 'admin-trainee', component: AdminTraineeComponent }
+  { path: 'admin-trainee', component: AdminTraineeComponent },
+  { path: 'admin-ngo', component: AdminNgoComponent}
 ];
 
 @NgModule({
