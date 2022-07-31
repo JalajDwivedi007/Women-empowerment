@@ -32,6 +32,8 @@ export class HostelTraineeService {
     params = params.append("gRelation", data.gRelation)
     params = params.append("gMobile", data.gMobile)
     params = params.append("gEmail", data.gEmail)
+    params = params.append("username", data.username)
+    params = params.append("status", data.status)
     return this.http.post(`${this.url}/hostel`, formData, { params: params });
   }
   getData() {

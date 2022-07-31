@@ -1,22 +1,29 @@
-<div class="container p-3">
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+  <h3 class="mx-auto">NGO Applications</h3>
   <table class="table">
     <tr>
       <th scope="col">Application No:</th>
       <th scope="col">NGO Name</th>
-      <th scope="col">Training Course Name</th>
+      <th scope="col">Project Name</th>
       <th scope="col">Application status</th>
+      <th scope="col">Document Uploaded</th>
       <th scope="col">Approval/Rejection</th>
-    </tr >
+    </tr>
     <tbody>
       <tr *ngFor="let result of results">
         <td scope="row">{{result.ngoId}}</td>
         <td>{{result.ngoName}}</td>
         <td>{{result.ngoProjDetails}}</td>
         <td>{{result.status}}</td>
-        <td>
-          <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
-          <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+        <td style="cursor:pointer;" (click)="documentDownload(result.d.id,result.d.fileName)" class="text-primary">
+          {{result.d.fileName}}</td>
+        <td *ngIf="appPen">
+          <button type="button" class="btn btn-outline-success btn-sm"
+            (click)="approveApp(result.ngoId)">Approve</button>
+          <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+            (click)="rejectApp(result.ngoId)">Reject</button>
         </td>
+        <td *ngIf="!appPen">{{result.status}}</td>
       </tr>
     </tbody>
   </table>

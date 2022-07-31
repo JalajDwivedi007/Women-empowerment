@@ -37,13 +37,13 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeAadhar: Number;
   file: File;
 
-  constructor(private ngoService: NgoRegisterService, private loginService: LoginSignupApprovalService) {}
+  constructor(private ngoService: NgoRegisterService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     // this.getInfo();
   }
-  getusername(){
-    this.username=this.loginService.getUsername();
+  getusername() {
+    this.username = this.loginService.getUsername();
   }
 
   onSubmit() {

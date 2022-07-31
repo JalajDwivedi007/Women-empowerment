@@ -29,6 +29,8 @@ export class SukanyaTraineeService {
     params = params.append("gRelation", data.relation)
     params = params.append("gMobile", data.gmobile)
     params = params.append("gEmail", data.gemail)
+    params = params.append("username", data.username)
+    params = params.append("status", data.status)
     params = params.append("ssyname", "")
     return this.http.post(`${this.url}/ssy`, formData, { params: params });
   }
