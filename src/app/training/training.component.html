@@ -1,49 +1,81 @@
 <!--This component will be shown if no records are there at present-->
-<div class="container" style="padding: 75px;">
+<div class="container" *ngIf="results1.length>0" style="padding: 75px;">
+  <h2 class="text-white mx-auto text-center">Your Courses</h2>
+  <div *ngFor="let item of results1">
     <div class="card mb-3">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="../assets/images/stiching.png" class="card-img" alt="stiching-img">
-        </div>
+      <div class="row">
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Stitching</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            <h5 class="card-title">{{item.title}}</h5>
+            <p *ngIf="item.title==='Agriculture'">
+              This training provides you with the basic knowledge about agriculture. In the course the instructors of
+              {{item.providedBy}} will guide you to start your journey in the field of Agriculture.
             </p>
+            <p *ngIf="item.title==='Stitching'">
+              This training provides you with the basic knowledge about stiching. In the course the instructors of
+              {{item.providedBy}} will guide you to start your journey in the field of stiching.
+            </p>
+            <p *ngIf="item.title==='Hand Crafting'">
+              This training provides you with the basic knowledge about Hand Crafting. In the course the instructors of
+              {{item.providedBy}} will guide you to start your journey in the field of Hand Crafting.
+            </p>
+            <p *ngIf="item.title==='Knitting'">
+              This training provides you with the basic knowledge about Knitting. In the course the instructors of
+              {{item.providedBy}} will guide you to start your journey in the field of Knitting.
+            </p>
+            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content
+              is
+              a little bit longer.
+            </p> -->
             <p class="card-text">
               <small class="text-muted">
-                <p class="mb-0">By Ngo Name</p>
-                <p class="mb-0">course duration</p>
-              </small></p>
+                <p class="mb-0">Provided by: {{item.providedBy}}</p>
+                <p class="mb-0">Duration: 2 weeks</p>
+              </small>
+            </p>
+            <button class="btn btn-sm btn-success">Start Course</button>
           </div>
+        </div>
+        <div class="col-md-4 p-1">
+          <img *ngIf="item.title==='Agriculture'" src="../assets/images/women-agriculture.jpg" class="card-img"
+            id="img1" alt="agriculture-img">
+          <img *ngIf="item.title==='Stitching'" src="../assets/images/image4.png" class="card-img" id="img1"
+            alt="stiching-img">
+          <img *ngIf="item.title==='Hand Crafting'" src="../assets/images/handcraft.jpg" class="card-img" id="img1"
+            alt="handcrafting-img">
+          <img *ngIf="item.title==='Knitting'" src="../assets/images/knitters.jpg" class="card-img" id="img1"
+            alt="knitting-img">
         </div>
       </div>
     </div>
-    <div class="card mb-3">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="../assets/images/agri.jpg" class="card-img" alt="agriculture-img">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Agriculture</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">
+    <!-- <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="../assets/images/agri.jpg" class="card-img" alt="agriculture-img">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Agriculture</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">
               <p class="mb-0">By Ngo Name</p>
               <p class="mb-0">course duration</p>
             </small></p>
-          </div>
         </div>
       </div>
     </div>
+  </div> -->
   </div>
-<div *ngIf="noRecords">
-    <div style="height:3rem;"></div>
-    <div class="card mx-auto " id="norecords" style="width:25rem;">
-        <h3 class="text-center text-primary ">No records found!</h3>
-        <img class="center mx-auto" src="../../assets/images/no-record-found.png" alt="No Records Pic" height="250px"
-            width="250px">
-    </div>
-    <div style="height:5rem;"></div>
+</div>
+<div *ngIf="results1.length==0">
+  <div style="height:3rem;"></div>
+  <div class="card mx-auto " id="norecords" style="width:25rem;">
+    <h3 class="text-center text-primary ">No records found!</h3>
+    <img class="center mx-auto" src="../../assets/images/no-record-found.png" alt="No Records Pic" height="250px"
+      width="250px">
+  </div>
+  <div style="height:5rem;"></div>
 </div>
