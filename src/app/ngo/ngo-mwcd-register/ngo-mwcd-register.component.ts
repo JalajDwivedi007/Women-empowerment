@@ -28,7 +28,6 @@ export class NgoMwcdRegisterComponent implements OnInit {
   ngoEmail: string;
   ngoWebsite: string;
   //PROJECT IN CHARGE DETAILS
-<<<<<<< HEAD
   fname: String;
   mname: String;
   lname: String;
@@ -37,16 +36,6 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeAddress: String;
   inchargePan: string;
   inchargeEdu: String;
-=======
-  fname: string;
-  mname: string;
-  lname: string;
-  inchargeState: string;
-  inchargecity: string;
-  inchargeAddress: string;
-  inchargePan: string;
-  inchargeEdu: string;
->>>>>>> a7b36e13dfd38881194f9947ec52f0623fdb8d2b
   inchargeAadhar: Number;
   file: File;
 
@@ -104,11 +93,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
   checkEmail() {
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.ngoEmail)) {
       // alert("Meeting specified requirements")
-<<<<<<< HEAD
       alert(" Email Not meeting specified requirements")
-=======
-      alert('Not meeting specified requirements');
->>>>>>> a7b36e13dfd38881194f9947ec52f0623fdb8d2b
       return false;
     }
     // else {
@@ -122,14 +107,9 @@ export class NgoMwcdRegisterComponent implements OnInit {
   }
   onSubmit() {
     // this.checkEmail();
-<<<<<<< HEAD
+
     // this.checkAadhar();
-  
-    this.getusername()
-=======
-    this.checkAadhar();
     this.getusername();
->>>>>>> a7b36e13dfd38881194f9947ec52f0623fdb8d2b
     console.log(this.file);
     if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
