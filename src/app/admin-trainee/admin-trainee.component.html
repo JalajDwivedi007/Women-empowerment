@@ -1,88 +1,106 @@
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
-  <h3 class="mx-auto">Training Applications</h3>
-  <table class="table">
-    <tr>
-      <th scope="col">Application No:</th>
-      <th scope="col">Username</th>
-      <th scope="col">Application type</th>
-      <th scope="col">Application Name</th>
-      <th scope="col">Application status</th>
-      <th scope="col">Document Uploaded</th>
-      <th scope="col">Approval/Rejection</th>
-    </tr>
-    <tr *ngFor="let result of results">
-      <th scope="row">{{result.a.applicationId}}</th>
-      <td>{{result.a.traineeFirstname}}</td>
-      <td>{{result.a.applicationtype}}</td>
-      <td>{{result.title}}</td>
-      <td>{{result.a.status}}</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id,result.a.d.fileName)" class="text-primary">
-        {{result.a.d.fileName}}</td>
-      <td *ngIf="appPen">
-        <button type="button" class="btn btn-outline-success btn-sm"
-          (click)="approveApp(result.a.applicationId)">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
-          (click)="rejectApp(result.a.applicationId)">Reject</button>
-      </td>
-      <td *ngIf="!appPen">{{result.a.status}}</td>
-    </tr>
-  </table>
+<div *ngIf="results.length>0 || results1.length>0 || results2.length>0 ">
+  <div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
+    <h3 class="mx-auto">Training Applications</h3>
+    <table class="table">
+      <tr>
+        <th scope="col">Application No:</th>
+        <th scope="col">Applicant Name</th>
+        <th scope="col">Application type</th>
+        <th scope="col">Application Name</th>
+        <th scope="col">Application status</th>
+        <th scope="col">Document Uploaded</th>
+        <th scope="col">Approval/Rejection</th>
+      </tr>
+      <tr *ngFor="let result of results">
+        <th scope="row">{{result.a.applicationId}}</th>
+        <td>{{result.a.traineeFirstname + " " + result.a.traineeLastname}}</td>
+        <td>{{result.a.applicationtype}}</td>
+        <td>{{result.title}}</td>
+        <td>{{result.a.status}}</td>
+        <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id,result.a.d.fileName)" class="text-primary">
+          {{result.a.d.fileName}}</td>
+        <td *ngIf="appPen">
+          <button type="button" class="btn btn-outline-success btn-sm"
+            (click)="approveApp(result.a.applicationId)">Approve</button>
+          <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+            (click)="rejectApp(result.a.applicationId)">Reject</button>
+        </td>
+        <td *ngIf="!appPen">{{result.a.status}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
+    <h3 class="mx-auto">Hostel Applications</h3>
+    <table class="table">
+      <tr>
+        <th scope="col">Application No:</th>
+        <th scope="col">Applicant Name</th>
+        <th scope="col">Application type</th>
+        <th scope="col">Application Name</th>
+        <th scope="col">Application status</th>
+        <th scope="col">Document Uploaded</th>
+        <th scope="col">Approval/Rejection</th>
+      </tr>
+      <tr *ngFor="let result1 of results1">
+        <th scope="row">{{result1.a.applicationId}}</th>
+        <td>{{result1.a.traineeFirstname +" "+result1.a.traineeLastname}}</td>
+        <td>{{result1.a.applicationtype}}</td>
+        <td>{{result1.hName}}</td>
+        <td>{{result1.a.status}}</td>
+        <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id,result1.a.d.fileName)"
+          class="text-primary">
+          {{result1.a.d.fileName}}</td>
+        <td *ngIf="appPen1">
+          <button type="button" class="btn btn-outline-success btn-sm"
+            (click)="approveApp1(result1.a.applicationId)">Approve</button>
+          <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+            (click)="rejectApp1(result1.a.applicationId)">Reject</button>
+        </td>
+        <td *ngIf="!appPen1">
+          {{result1.a.status}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
+    <h3 class="mx-auto">SSY Applications</h3>
+    <table>
+      <tr>
+        <th scope="col">Application No:</th>
+        <th scope="col">Applicant Name</th>
+        <th scope="col">Application type</th>
+        <th scope="col">Application Name</th>
+        <th scope="col">Application status</th>
+        <th scope="col">Document Uploaded</th>
+        <th scope="col">Approval/Rejection</th>
+      </tr>
+      <tr *ngFor="let result2 of results2">
+        <th scope="row">{{result2.a.applicationId}}</th>
+        <td>{{result2.a.traineeFirstname+" "+result2.a.traineeLastname}}</td>
+        <td>{{result2.a.applicationtype}}</td>
+        <td>{{result2.ssyname}}</td>
+        <td>{{result2.a.status}}</td>
+        <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id,result2.a.d.fileName)"
+          class="text-primary">
+          {{result2.a.d.fileName}}</td>
+        <td *ngIf="appPen2">
+          <button type="button" class="btn btn-outline-success btn-sm"
+            (click)="approveApp2(result2.a.applicationId)">Approve</button>
+          <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+            (click)="rejectApp2(result2.a.applicationId)">Reject</button>
+        </td>
+        <td *ngIf="!appPen2">{{result2.a.status}}</td>
+      </tr>
+    </table>
+  </div>
+  <div style="height:5rem;"></div>
 </div>
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
-  <h3 class="mx-auto">Hostel Applications</h3>
-  <table class="table">
-    <tr>
-      <th scope="col">Application No:</th>
-      <th scope="col">Username</th>
-      <th scope="col">Application type</th>
-      <th scope="col">Application Name</th>
-      <th scope="col">Application status</th>
-      <th scope="col">Document Uploaded</th>
-      <th scope="col">Approval/Rejection</th>
-    </tr>
-    <tr *ngFor="let result1 of results1">
-      <th scope="row">{{result1.a.applicationId}}</th>
-      <td>{{result1.a.traineeFirstname}}</td>
-      <td>{{result1.a.applicationtype}}</td>
-      <td>{{result1.hName}}</td>
-      <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id,result1.a.d.fileName)" class="text-primary">
-        {{result1.a.d.fileName}}</td>
-      <td>
-        <button type="button" class="btn btn-outline-success btn-sm"
-          (click)="approveApp(result1.a.applicationId)">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
-          (click)="rejectApp(result1.a.applicationId)">Reject</button>
-      </td>
-    </tr>
-  </table>
-</div>
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
-  <h3 class="mx-auto">SSY Applications</h3>
-  <table>
-    <tr>
-      <th scope="col">Application No:</th>
-      <th scope="col">Username</th>
-      <th scope="col">Application type</th>
-      <th scope="col">Application Name</th>
-      <th scope="col">Application status</th>
-      <th scope="col">Document Uploaded</th>
-      <th scope="col">Approval/Rejection</th>
-    </tr>
-    <tr *ngFor="let result2 of results2">
-      <th scope="row">{{result2.a.applicationId}}</th>
-      <td>{{result2.a.traineeFirstname}}</td>
-      <td>{{result2.a.applicationtype}}</td>
-      <td>{{result2.ssyname}}</td>
-      <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id,result2.a.d.fileName)" class="text-primary">
-        {{result2.a.d.fileName}}</td>
-      <td>
-        <button type="button" class="btn btn-outline-success btn-sm"
-          (click)="approveApp(result2.a.applicationId)">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
-          (click)="rejectApp(result2.a.applicationId)">Reject</button>
-      </td>
-    </tr>
-  </table>
+<div *ngIf="results.length==0 || results1.length==0 || results2.length==0">
+  <div style="height:3rem;"></div>
+  <div class="card mx-auto " id="norecords" style="width:25rem;">
+    <h3 class="text-center text-primary ">No records found!</h3>
+    <img class="center mx-auto" src="../../assets/images/no-record-found.png" alt="No Records Pic" height="250px"
+      width="250px">
+  </div>
+  <div style="height:10rem;"></div>
 </div>

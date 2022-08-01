@@ -8,21 +8,30 @@ import * as fileSaver from 'file-saver';
   styleUrls: ['./admin-ngo.component.css'],
 })
 export class AdminNgoComponent implements OnInit {
-  results: any;
+  results: any = [];
+  results1: any = [];
   appPen: boolean = true;
   constructor(
     private ngoService: NgoRegisterService,
     private courseService: CourseTraineeService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getInfo();
   }
-
+  // result.status
   getInfo() {
     this.ngoService.getData().subscribe((res) => {
       console.log(res);
-      this.results = res;
+      this.results1 = res;
+      for (let i = 0; i < this.results1.length; i++) {
+        if (res[i]["status"] === "pending") {
+
+          this.results.unshift(res[i]);
+        }
+      }
+
+
     });
   }
   documentDownload(id: number, filename: string) {
