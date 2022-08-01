@@ -1,4 +1,4 @@
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
   <h3 class="mx-auto">Training Applications</h3>
   <table class="table">
     <tr>
@@ -15,16 +15,20 @@
       <td>{{result.a.traineeFirstname}}</td>
       <td>{{result.a.applicationtype}}</td>
       <td>{{result.title}}</td>
-      <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id)">Click Here</td>
-      <td>
-        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+      <td>{{result.a.status}}</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result.a.d.id,result.a.d.fileName)" class="text-primary">
+        {{result.a.d.fileName}}</td>
+      <td *ngIf="appPen">
+        <button type="button" class="btn btn-outline-success btn-sm"
+          (click)="approveApp(result.a.applicationId)">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+          (click)="rejectApp(result.a.applicationId)">Reject</button>
       </td>
+      <td *ngIf="!appPen">{{result.a.status}}</td>
     </tr>
   </table>
 </div>
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
   <h3 class="mx-auto">Hostel Applications</h3>
   <table class="table">
     <tr>
@@ -42,15 +46,18 @@
       <td>{{result1.a.applicationtype}}</td>
       <td>{{result1.hName}}</td>
       <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id)">Click Here</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result1.a.d.id,result1.a.d.fileName)" class="text-primary">
+        {{result1.a.d.fileName}}</td>
       <td>
-        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+        <button type="button" class="btn btn-outline-success btn-sm"
+          (click)="approveApp(result1.a.applicationId)">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+          (click)="rejectApp(result1.a.applicationId)">Reject</button>
       </td>
     </tr>
   </table>
 </div>
-<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:70rem;">
+<div class="card p-3 bg-white mt-2 mb-2 mx-auto" style="width:85rem;">
   <h3 class="mx-auto">SSY Applications</h3>
   <table>
     <tr>
@@ -68,10 +75,13 @@
       <td>{{result2.a.applicationtype}}</td>
       <td>{{result2.ssyname}}</td>
       <td>Pending</td>
-      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id)">Click Here</td>
+      <td style="cursor:pointer;" (click)="documentDownload(result2.a.d.id,result2.a.d.fileName)" class="text-primary">
+        {{result2.a.d.fileName}}</td>
       <td>
-        <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
-        <button type="button" class="btn btn-outline-danger btn-sm mx-3">Reject</button>
+        <button type="button" class="btn btn-outline-success btn-sm"
+          (click)="approveApp(result2.a.applicationId)">Approve</button>
+        <button type="button" class="btn btn-outline-danger btn-sm mx-3"
+          (click)="rejectApp(result2.a.applicationId)">Reject</button>
       </td>
     </tr>
   </table>

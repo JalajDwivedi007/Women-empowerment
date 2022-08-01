@@ -33,6 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NgoInfoComponent } from './ngo-info/ngo-info.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     TraineeInfoComponent,
     AdminTraineeComponent,
     HomePageComponent,
+    NgoInfoComponent,
   ],
   imports: [
     BrowserModule,
