@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgoRegisterService } from 'src/app/ngo-register.service';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ngo-mwcd-register',
