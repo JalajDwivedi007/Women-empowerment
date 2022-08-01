@@ -52,4 +52,8 @@ export class LoginSignupApprovalService {
   setUsername(username: string) {
     this.username = username;
   }
+  forgotpassword(data: any) {
+    console.log(data);
+    return this.http.put(`${this.url}/forgotpassword`, data)
+  }
 }
