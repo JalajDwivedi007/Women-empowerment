@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseTraineeService } from 'src/app/course-trainee.service';
 import { LoginComponent } from 'src/app/login/login.component';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
@@ -17,7 +18,7 @@ export class TraineeCourseRegComponent implements OnInit {
   state: string;
   city: string;
   address: string;
-  aadhaar: bigint;
+  aadhaar: Number;
   pan: String;
   education: string;
   gfirstname: string;
@@ -34,7 +35,8 @@ export class TraineeCourseRegComponent implements OnInit {
 
   constructor(
     private courseService: CourseTraineeService,
-    private loginService: LoginSignupApprovalService
+    private loginService: LoginSignupApprovalService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -51,14 +53,67 @@ export class TraineeCourseRegComponent implements OnInit {
       alert('Invalid Adhaar Number');
       return false;
     }
+    if (typeof this.aadhaar === 'undefined') {
+      alert('Aadhaar Undefined');
+      return false;
+    }
 
     return true;
   }
+  checkEmail() {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.gemail)) {
+      // alert("Meeting specified requirements")
+      alert('Invalid Email format');
+      return false;
+    }
+    // else {
+    //   alert("Not meeting specified requirements")
+    // }
+    if (typeof this.gemail === 'undefined') {
+      alert('Email Undefined');
+      return false;
+    }
+    return true;
+  }
+  checkMobile() {
+    console.log(this.gmobile);
+
+    if (!/^[6-9]\d{9}$/.test(this.gmobile.toString())) {
+      alert('Invalid Phone Number');
+      return false;
+    }
+    if (typeof this.gmobile === 'undefined') {
+      alert('Mobile Undefined');
+      return false;
+    }
+
+    return true;
+  }
+
+  checkPan() {
+    console.log(this.pan);
+
+    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test(this.pan.toString())) {
+      alert('Invalid Pan Number');
+      return false;
+    }
+    if (typeof this.pan === 'undefined') {
+      alert('Pan Undefined');
+      return false;
+    }
+
+    return true;
+  }
+
   onSubmit() {
-    this.checkAadhar();
     this.usernameSet();
     console.log(this.file);
-    if (this.checkAadhar()) {
+    if (
+      this.checkAadhar() &&
+      this.checkEmail() &&
+      this.checkPan() &&
+      this.checkMobile()
+    ) {
       let data = {
         username: this.username,
         status: 'pending',
@@ -85,7 +140,9 @@ export class TraineeCourseRegComponent implements OnInit {
       };
       this.courseService.postData(data).subscribe((res) => {
         // console.log(res);
+        alert('Details Submitted successfully!');
         this.getInfo();
+        this.router.navigate(['trainee-info']);
       });
     }
   }
