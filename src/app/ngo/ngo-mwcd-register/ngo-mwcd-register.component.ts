@@ -108,12 +108,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
     // this.checkEmail();
 
     // this.checkAadhar();
-  
-    this.getusername()
-
-    this.checkAadhar();
     this.getusername();
-
     console.log(this.file);
     if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
