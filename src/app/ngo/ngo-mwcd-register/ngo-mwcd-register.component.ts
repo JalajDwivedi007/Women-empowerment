@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgoRegisterService } from 'src/app/ngo-register.service';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ngo-mwcd-register',
@@ -123,39 +124,6 @@ export class NgoMwcdRegisterComponent implements OnInit {
         this.router.navigate(['ngo-info']);
       });
     }
-    // let data = {
-    //   username: this.username,
-    //   status: "pending",
-    //   ngoName: this.ngoName,
-    //   members: this.members,
-    //   workAreas: this.workAreas,
-    //   ngoState: this.ngoState,
-    //   ngocity: this.ngocity,
-    //   ngoAddress: this.ngoAddress,
-    //   ngoRegistrationNumber: this.ngoRegistrationNumber,
-    //   ngoDOE: this.ngoDOE,
-    //   newCampaign: this.newCampaign,
-    //   ngoProjDetails: this.ngoProjDetails,
-    //   ngoAmount: this.ngoAmount,
-    //   ngoMobile: this.ngoMobile,
-    //   ngoEmail: this.ngoEmail,
-    //   ngoWebsite: this.ngoWebsite,
-    //   //Project in-charge
-    //   fname: this.fname,
-    //   mname: this.mname,
-    //   lname: this.lname,
-    //   inchargeState: this.inchargeState,
-    //   inchargecity: this.inchargecity,
-    //   inchargeAddress: this.inchargeAddress,
-    //   inchargePan: this.inchargePan,
-    //   inchargeEdu: this.inchargeEdu,
-    //   inchargeAadhar: this.inchargeAadhar,
-    //   files: this.file,
-    // };
-    // this.ngoService.postData(data).subscribe((res) => {
-    //   // console.log(res);
-    //   this.getInfo();
-    // });
   }
   getInfo() {
     this.ngoService.getData().subscribe((res) => {

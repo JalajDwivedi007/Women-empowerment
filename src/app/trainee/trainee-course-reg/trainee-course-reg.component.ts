@@ -6,7 +6,7 @@ import { LoginSignupApprovalService } from 'src/app/services/login-signup-approv
 @Component({
   selector: 'app-trainee-course-reg',
   templateUrl: './trainee-course-reg.component.html',
-  styleUrls: ['./trainee-course-reg.component.css']
+  styleUrls: ['./trainee-course-reg.component.css'],
 })
 export class TraineeCourseRegComponent implements OnInit {
   username: string;
@@ -32,50 +32,62 @@ export class TraineeCourseRegComponent implements OnInit {
   aboutTra: string;
   file: File;
 
-  constructor(private courseService: CourseTraineeService, private loginService: LoginSignupApprovalService) { }
+  constructor(
+    private courseService: CourseTraineeService,
+    private loginService: LoginSignupApprovalService
+  ) {}
 
   ngOnInit(): void {
     this.getInfo();
-
   }
   usernameSet() {
     this.username = this.loginService.getUsername();
     console.log(this.username);
   }
-  onSubmit() {
-    this.usernameSet();
-    console.log(this.file)
-    let data = {
-      username: this.username,
-      status: "pending",
-      firstname: this.firstname,
-      middlename: this.middlename,
-      lastname: this.lastname,
-      state: this.state,
-      city: this.city,
-      address: this.address,
-      aadhaar: this.aadhaar,
-      pan: this.pan,
-      education: this.education,
-      gfirstname: this.gfirstname,
-      gmiddlename: this.gmiddlename,
-      glastname: this.glastname,
-      geducation: this.geducation,
-      grelation: this.grelation,
-      gmobile: this.gmobile,
-      gemail: this.gemail,
-      title: this.title,
-      providedBy: this.providedBy,
-      aboutTra: this.aboutTra,
-      file: this.file
+  checkAadhar() {
+    console.log(this.aadhaar);
 
+    if (!/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(this.aadhaar.toString())) {
+      alert('Invalid Adhaar Number');
+      return false;
     }
 
-    this.courseService.postData(data).subscribe((res) => {
-      // console.log(res);
-      this.getInfo();
-    })
-
+    return true;
+  }
+  onSubmit() {
+    this.checkAadhar();
+    this.usernameSet();
+    console.log(this.file);
+    if (this.checkAadhar()) {
+      let data = {
+        username: this.username,
+        status: 'pending',
+        firstname: this.firstname,
+        middlename: this.middlename,
+        lastname: this.lastname,
+        state: this.state,
+        city: this.city,
+        address: this.address,
+        aadhaar: this.aadhaar,
+        pan: this.pan,
+        education: this.education,
+        gfirstname: this.gfirstname,
+        gmiddlename: this.gmiddlename,
+        glastname: this.glastname,
+        geducation: this.geducation,
+        grelation: this.grelation,
+        gmobile: this.gmobile,
+        gemail: this.gemail,
+        title: this.title,
+        providedBy: this.providedBy,
+        aboutTra: this.aboutTra,
+        file: this.file,
+      };
+      this.courseService.postData(data).subscribe((res) => {
+        // console.log(res);
+        this.getInfo();
+      });
+    }
   }
   getInfo() {
     this.courseService.getData().subscribe((res) => {
@@ -91,5 +103,4 @@ export class TraineeCourseRegComponent implements OnInit {
       this.file = event.target.files[0];
     }
   }
-
 }
