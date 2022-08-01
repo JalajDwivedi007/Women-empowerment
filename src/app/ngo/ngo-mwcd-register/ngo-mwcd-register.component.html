@@ -132,7 +132,8 @@
       </div>
       <div class="col-sm-4 row">
         <label for="email" class="mt-1 col-sm-6">Email:</label>
-        <input type="text" name="email" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="ngoEmail" />
+        <input type="text" name="email" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="ngoEmail"
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" />
       </div>
       <div class="col-sm-4 row">
         <label for="weblink" class="mt-1 col-sm-6">Website link:</label>

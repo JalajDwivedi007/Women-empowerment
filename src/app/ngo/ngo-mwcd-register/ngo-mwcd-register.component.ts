@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgoRegisterService } from 'src/app/ngo-register.service';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
@@ -23,7 +24,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
   ngoDOE: String;
   newCampaign: String;
   ngoProjDetails: String;
-  ngoEmail: String;
+  ngoEmail: string;
   ngoWebsite: String;
   //PROJECT IN CHARGE DETAILS
   fname: String;
@@ -37,7 +38,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeAadhar: Number;
   file: File;
 
-  constructor(private ngoService: NgoRegisterService, private loginService: LoginSignupApprovalService) { }
+  constructor(private ngoService: NgoRegisterService, private loginService: LoginSignupApprovalService, private router: Router) { }
 
   ngOnInit(): void {
     // this.getInfo();
@@ -45,43 +46,111 @@ export class NgoMwcdRegisterComponent implements OnInit {
   getusername() {
     this.username = this.loginService.getUsername();
   }
-
+  checkAadhar() {
+    console.log(this.inchargeAadhar)
+    // if ((this.inchargeAadhar).toString().length < 12) {
+    //   alert("Aadhar must be of length 12");
+    // }
+    if (!/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(this.inchargeAadhar.toString())) {
+      alert('Mention correct aadhar');
+      return false;
+    }
+    // else {
+    //   alert("Aadhar is correct")
+    // }
+    return true;
+  }
+  checkEmail() {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.ngoEmail)) {
+      // alert("Meeting specified requirements")
+      alert("Not meeting specified requirements")
+      return false;
+    }
+    // else {
+    //   alert("Not meeting specified requirements")
+    // }
+    if (typeof this.ngoEmail === "undefined") {
+      alert('undefined');
+      return false;
+    }
+    return true;
+  }
   onSubmit() {
+    // this.checkEmail();
+    this.checkAadhar();
     this.getusername()
     console.log(this.file);
-    let data = {
-      username: this.username,
-      status: "pending",
-      ngoName: this.ngoName,
-      members: this.members,
-      workAreas: this.workAreas,
-      ngoState: this.ngoState,
-      ngocity: this.ngocity,
-      ngoAddress: this.ngoAddress,
-      ngoRegistrationNumber: this.ngoRegistrationNumber,
-      ngoDOE: this.ngoDOE,
-      newCampaign: this.newCampaign,
-      ngoProjDetails: this.ngoProjDetails,
-      ngoAmount: this.ngoAmount,
-      ngoMobile: this.ngoMobile,
-      ngoEmail: this.ngoEmail,
-      ngoWebsite: this.ngoWebsite,
-      //Project in-charge
-      fname: this.fname,
-      mname: this.mname,
-      lname: this.lname,
-      inchargeState: this.inchargeState,
-      inchargecity: this.inchargecity,
-      inchargeAddress: this.inchargeAddress,
-      inchargePan: this.inchargePan,
-      inchargeEdu: this.inchargeEdu,
-      inchargeAadhar: this.inchargeAadhar,
-      files: this.file,
-    };
-    this.ngoService.postData(data).subscribe((res) => {
-      // console.log(res);
-      this.getInfo();
-    });
+    if (this.checkEmail() && this.checkAadhar()) {
+      let data = {
+        username: this.username,
+        status: "pending",
+        ngoName: this.ngoName,
+        members: this.members,
+        workAreas: this.workAreas,
+        ngoState: this.ngoState,
+        ngocity: this.ngocity,
+        ngoAddress: this.ngoAddress,
+        ngoRegistrationNumber: this.ngoRegistrationNumber,
+        ngoDOE: this.ngoDOE,
+        newCampaign: this.newCampaign,
+        ngoProjDetails: this.ngoProjDetails,
+        ngoAmount: this.ngoAmount,
+        ngoMobile: this.ngoMobile,
+        ngoEmail: this.ngoEmail,
+        ngoWebsite: this.ngoWebsite,
+        //Project in-charge
+        fname: this.fname,
+        mname: this.mname,
+        lname: this.lname,
+        inchargeState: this.inchargeState,
+        inchargecity: this.inchargecity,
+        inchargeAddress: this.inchargeAddress,
+        inchargePan: this.inchargePan,
+        inchargeEdu: this.inchargeEdu,
+        inchargeAadhar: this.inchargeAadhar,
+        files: this.file,
+      };
+      this.ngoService.postData(data).subscribe((res) => {
+        // console.log(res);
+        alert("Details Submitted successfully!")
+        this.getInfo();
+        this.router.navigate(['ngo-info'])
+
+      });
+    }
+    // let data = {
+    //   username: this.username,
+    //   status: "pending",
+    //   ngoName: this.ngoName,
+    //   members: this.members,
+    //   workAreas: this.workAreas,
+    //   ngoState: this.ngoState,
+    //   ngocity: this.ngocity,
+    //   ngoAddress: this.ngoAddress,
+    //   ngoRegistrationNumber: this.ngoRegistrationNumber,
+    //   ngoDOE: this.ngoDOE,
+    //   newCampaign: this.newCampaign,
+    //   ngoProjDetails: this.ngoProjDetails,
+    //   ngoAmount: this.ngoAmount,
+    //   ngoMobile: this.ngoMobile,
+    //   ngoEmail: this.ngoEmail,
+    //   ngoWebsite: this.ngoWebsite,
+    //   //Project in-charge
+    //   fname: this.fname,
+    //   mname: this.mname,
+    //   lname: this.lname,
+    //   inchargeState: this.inchargeState,
+    //   inchargecity: this.inchargecity,
+    //   inchargeAddress: this.inchargeAddress,
+    //   inchargePan: this.inchargePan,
+    //   inchargeEdu: this.inchargeEdu,
+    //   inchargeAadhar: this.inchargeAadhar,
+    //   files: this.file,
+    // };
+    // this.ngoService.postData(data).subscribe((res) => {
+    //   // console.log(res);
+    //   this.getInfo();
+    // });
   }
   getInfo() {
     this.ngoService.getData().subscribe((res) => {
