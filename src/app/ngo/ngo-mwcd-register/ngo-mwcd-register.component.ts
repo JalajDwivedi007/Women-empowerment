@@ -4,6 +4,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { NgoRegisterService } from 'src/app/ngo-register.service';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 
+
 @Component({
   selector: 'app-ngo-mwcd-register',
   templateUrl: './ngo-mwcd-register.component.html',
@@ -12,29 +13,31 @@ import { LoginSignupApprovalService } from 'src/app/services/login-signup-approv
 export class NgoMwcdRegisterComponent implements OnInit {
   username: string;
   status: string;
-  ngoName: String;
+  ngoName: string;
   members: Number;
-  workAreas: String;
-  ngoState: String;
-  ngocity: String;
-  ngoAddress: String;
+  workAreas: string;
+  ngoState: string;
+  ngocity: string;
+  ngoAddress: string;
   ngoRegistrationNumber: Number;
   ngoAmount: Number;
   ngoMobile: Number;
-  ngoDOE: String;
-  newCampaign: String;
-  ngoProjDetails: String;
+  ngoDOE: string;
+  newCampaign: string;
+  ngoProjDetails: string;
   ngoEmail: string;
-  ngoWebsite: String;
+  ngoWebsite: string;
   //PROJECT IN CHARGE DETAILS
-  fname: String;
-  mname: String;
-  lname: String;
-  inchargeState: String;
-  inchargecity: String;
-  inchargeAddress: String;
-  inchargePan: String;
-  inchargeEdu: String;
+
+  fname: string;
+  mname: string;
+  lname: string;
+  inchargeState: string;
+  inchargecity: string;
+  inchargeAddress: string;
+  inchargePan: string;
+  inchargeEdu: string;
+
   inchargeAadhar: Number;
   file: File;
 
@@ -60,10 +63,36 @@ export class NgoMwcdRegisterComponent implements OnInit {
     // }
     return true;
   }
+  checkPan(){
+    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test((this.inchargePan))){
+      alert("Enter correct PAN Number")
+      return false;
+    }
+    if (typeof this.inchargePan === "undefined") {
+      alert('undefined');
+     return false;
+    }
+    return true;
+  }
+  checkMobile(){
+    if (!/^[6-9]\d{9}$/.test(String(this.ngoMobile))){
+      alert("Mobile Wrong Format")
+      return false;
+    }
+    if (typeof this.ngoMobile === "undefined") {
+      alert('undefined');
+     return false;
+    }
+    return true;
+
+  }
   checkEmail() {
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.ngoEmail)) {
       // alert("Meeting specified requirements")
-      alert("Not meeting specified requirements")
+
+      alert(" Email Not meeting specified requirements")
+
+
       return false;
     }
     // else {
@@ -77,10 +106,11 @@ export class NgoMwcdRegisterComponent implements OnInit {
   }
   onSubmit() {
     // this.checkEmail();
-    this.checkAadhar();
-    this.getusername()
+
+    // this.checkAadhar();
+    this.getusername();
     console.log(this.file);
-    if (this.checkEmail() && this.checkAadhar()) {
+    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
         username: this.username,
         status: "pending",

@@ -1,5 +1,5 @@
 <section class="sec mt-3 mb-3">
-  <div *ngIf="items1.length>0 ||items2.length>0 || items3.length>0" class="card bg-white mx-auto" style="width:60rem;">
+  <div *ngIf="items1.length>0 || items2.length>0 || items3.length>0" class="card bg-white mx-auto" style="width:60rem;">
     <h3 class="text-center">Your Applications</h3>
     <hr />
     <table class="table table-striped mt-3">
@@ -37,7 +37,7 @@
       </tbody>
     </table>
   </div>
-  <div *ngIf="items1.length==0 && items2.length==0 && items3.length==0 ">
+  <div *ngIf="items1.length==0 && items2.length==0 && items3.length==0">
     <div style="height:3rem;"></div>
     <div class="card mx-auto " id="norecords" style="width:25rem;">
       <h3 class="text-center text-primary ">No records found!</h3>
