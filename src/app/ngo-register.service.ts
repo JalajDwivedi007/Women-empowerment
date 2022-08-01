@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class NgoRegisterService {
   url: string = 'http://localhost:9090';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   postData(data: any) {
     let params = new HttpParams();
@@ -37,9 +37,16 @@ export class NgoRegisterService {
     params = params.append('inchargePan', data.inchargePan);
     params = params.append('inchargeEdu', data.inchargeEdu);
     params = params.append('inchargeAadhaar', data.inchargeAadhar);
+    params = params.append("username", data.username);
+    params = params.append("status", data.status);
     return this.http.post(`${this.url}/ngo`, formData, { params: params });
   }
   getData() {
     return this.http.get(`${this.url}/ngos`);
+  }
+  changeApplicationStatus(id: number, status: string) {
+    let params = new HttpParams();
+    params = params.append('status', status);
+    return this.http.put(`${this.url}/changeNGOApplicationStatus/` + id, {}, { params: params });
   }
 }

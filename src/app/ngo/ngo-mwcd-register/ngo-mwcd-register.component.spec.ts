@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { NgoMwcdRegisterComponent } from './ngo-mwcd-register.component';
 
@@ -8,9 +9,8 @@ describe('NgoMwcdRegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgoMwcdRegisterComponent ]
-    })
-    .compileComponents();
+      declarations: [NgoMwcdRegisterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

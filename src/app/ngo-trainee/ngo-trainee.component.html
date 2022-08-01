@@ -1,95 +1,33 @@
 <section class="section1 mt-3">
-  <div class="container">
+  <div class="container bg-white">
     <!-- <p><a href="#">Home </a>>> About Us</p> -->
     <h3>NGOs</h3>
+    <hr /><br />
+    <div *ngFor="let res of result1">
+    <ul>
+      <li><h4 class="text-capitalize">{{res.ngoName}}</h4>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <ul class="list-unstyled">
+              <li>Establish Date : {{res.ngoDOE}}</li>
+              <li>Number of Members : {{res.members}}</li>
+              <li>Address : {{res.ngoAddress}}</li>
+              <li>Work Areas : {{res.workAreas}}</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled">Contact Us:
+              <li>Mobile No : {{res.ngoMobile}}</li>
+              <li>Email : {{res.ngoEmail}}</li>
+              <li>Website : {{res.ngoWebsite}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </li>
+    </ul>
     <hr />
-    <br />
-
-    <h5>1) Shri Kalyan Women Welfare Society</h5>
-    <div>
-      <img src="./assets/photos/image3.jpeg" alt="women" />
-
-      <p>Founded in 1996.</p>
-      <p>
-        The Kalyan Women Welfare Society is a non-profit organisation dedicated
-        to upgrading people in Rajasthan's most dangerous geographical
-        districts, where there is severe water scarcity and poverty. The
-        foundation offers free education, skill development training, and job
-        opportunities.
-      </p>
-      <p>
-        In collaboration with government and non-government organisations, the
-        women's NGO aims for child rights, legal protection, improved health and
-        welfare, access to clean water, and nutritional food.
-      </p>
-      <br /><br />
-    </div>
-    <hr />
-    <h5>2) Rajasthan Samgrah Kalyan Sansthan</h5>
-    <div>
-      <img src="./assets/photos/image1.jpg" class="img-left" alt="women" />
-
-      <p>Founded in 1992.</p>
-      <p>
-        RSKS (Rajasthan Samgrah Kalyan Sansthan) is a grassroots nonprofit
-        organisation dedicated to assisting marginalised women and girls. The
-        women's NGO supports empowerment, sustainable livelihood, girls'
-        education, gender equality, child rights, and the welfare of the
-        community's marginalised and impoverished members.
-      </p>
-      <p>
-        The charity also works to tackle issues concerning agriculture, the
-        ecology, and water shortages. The United Nations Economic and Social
-        Council (ECOSOC) has accorded this NGO for women and girls Special
-        Consultative Status (2015).
-      </p>
-      <br /><br />
-    </div>
-    <hr />
-    <h5>3) Gramin Vikas Evam Chetna Sansthan</h5>
-    <div>
-      <img src="./assets/photos/image4.png" alt="women" />
-
-      <p>Founded in 1998.</p>
-      <p>
-        The goal of this women's NGO is to empower and elevate rural and
-        disadvantaged areas, assist women, encourage craftsmen via their trade,
-        and produce income. Gramin Vikas Evam Chetan Sansthan (GVCS) was
-        established in the town of Barmer, Rajasthan. It is dedicated to
-        empowering women artisans by making handicrafts a viable home-based
-        source of income for financial independence.
-      </p>
-      <p>
-        GVCS began with just ten members and has since evolved to a large-scale
-        organisation that serves over 22,000 women in 75 communities. A
-        expanding network of women artisans working in various craft forms has
-        enabled GVCS to work on a wide range of rural development initiatives
-        such as the construction of self-help groups or SHGs, the provision of
-        fodder for drought-affected cattle, and educational programmes for
-        children and women.
-      </p>
-      <br /><br />
-    </div>
-    <hr />
-    <h5>4) Swadhar IDWC (Institute for Development of Women and Children)</h5>
-    <div>
-      <img src="./assets/photos/image6.jpg" class="img-left" alt="womenload" />
-
-      <p>Founded in 1983.</p>
-      <p>
-        Swadhar was formed in Mumbai in 1983 to assist women in need, regardless
-        of caste, religion, community, or financial background. Swadhar IDWC was
-        formed in 1998 as Swadhar added daycare to its services. It began
-        focusing on education, health care, and general development of poor
-        children, with a specific emphasis on the female child, in addition to
-        tackling women-centric concerns.
-      </p>
-      <p>
-        Swadhar, according to its name, works tirelessly to create self-reliant
-        women and children by educating them about their rights and allowing
-        them to live independent, dignified lives.
-      </p>
-      <br /><br />
-    </div>
+  </div>
   </div>
 </section>

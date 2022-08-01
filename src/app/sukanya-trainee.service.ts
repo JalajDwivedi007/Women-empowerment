@@ -5,7 +5,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SukanyaTraineeService {
-  url: string = "http://localhost:8052";
+  url: string = "http://localhost:9090";
   constructor(private http: HttpClient) { }
   postData(data: any) {
     let params = new HttpParams();
@@ -29,6 +29,8 @@ export class SukanyaTraineeService {
     params = params.append("gRelation", data.relation)
     params = params.append("gMobile", data.gmobile)
     params = params.append("gEmail", data.gemail)
+    params = params.append("username", data.username)
+    params = params.append("status", data.status)
     params = params.append("ssyname", "")
     return this.http.post(`${this.url}/ssy`, formData, { params: params });
   }
@@ -36,5 +38,5 @@ export class SukanyaTraineeService {
     return this.http.get(`${this.url}/ssy`);
   }
 
-  
+
 }

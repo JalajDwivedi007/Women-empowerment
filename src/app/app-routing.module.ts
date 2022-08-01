@@ -23,6 +23,11 @@ import { TraineeSukanyaRegComponent } from './trainee/trainee-sukanya-reg/traine
 import { NgoCourseRegisterComponent } from './ngo/ngo-course-register/ngo-course-register.component';
 import { NgoMwcdRegisterComponent } from './ngo/ngo-mwcd-register/ngo-mwcd-register.component';
 import { NgoRegisterHomeComponent } from './ngo/ngo-register-home/ngo-register-home.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
+import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
+import { AdminNgoComponent } from './admin-ngo/admin-ngo.component';
+import { NgoInfoComponent } from './ngo-info/ngo-info.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginAdmin', component: LoginComponent },
@@ -43,13 +48,18 @@ const routes: Routes = [
   { path: 'ngo-course-register', component: NgoCourseRegisterComponent },
   { path: 'ngo-mwcd-register', component: NgoMwcdRegisterComponent },
   { path: 'ngo-register-home', component: NgoRegisterHomeComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'trainee-info', component: TraineeInfoComponent },
+  { path: 'admin-trainee', component: AdminTraineeComponent },
+  { path: 'admin-ngo', component: AdminNgoComponent},
+  {path:'ngo-info',component: NgoInfoComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 // { path: '', component: HomeComponent },
 //   { path: 'products', component: ProductComponent },
 //   { path: 'about', component: AboutComponent },

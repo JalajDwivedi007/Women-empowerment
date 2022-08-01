@@ -12,26 +12,17 @@ export class NavbarComponent implements OnInit {
   privilegeNGO: boolean;
   privilegeNone: boolean;
   execute: boolean = false;
+  userOption: string;
   isLoggedIn: boolean;
   user: string;
   flag: number = 0;
   constructor(
     private loginService: LoginSignupApprovalService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.privilegeNone = true;
-    setTimeout(() => {
-      //<<<---using ()=> syntax
-
-      this.isLoggedIn = this.loginService.getLoginStatus();
-      console.log(this.isLoggedIn);
-      if (!this.isLoggedIn) {
-        this.ngOnInit();
-      }
-      this.viewNavbar(this.isLoggedIn);
-    }, 5000);
+    this.loadfunc();
     // while (this.isLoggedIn) {
     //   this.privilegeNone = true;
     //   this.isLoggedIn = this.loginService.getLoginStatus();
@@ -52,18 +43,31 @@ export class NavbarComponent implements OnInit {
     //   }
     // } while (this.flag === 0)
   }
-  onLoad(): void {
-    // this.privilegeNone = true;
-    this.isLoggedIn = this.loginService.getLoginStatus();
-    // console.log(this.isLoggedIn);
-    if (this.isLoggedIn) {
-      // this.toggle();
+  loadfunc() {
+    this.privilegeNone = true;
+    setTimeout(() => {
+      //<<<---using ()=> syntax
+
+      this.isLoggedIn = this.loginService.getLoginStatus();
       console.log(this.isLoggedIn);
-    } else {
-      // this.privilegeNone = true;
-      // this.ngOnInit();
-    }
+      if (!this.isLoggedIn) {
+        this.ngOnInit();
+      }
+      this.viewNavbar(this.isLoggedIn);
+    }, 1000);
   }
+  // onLoad(): void {
+  //   // this.privilegeNone = true;
+  //   this.isLoggedIn = this.loginService.getLoginStatus();
+  //   // console.log(this.isLoggedIn);
+  //   if (this.isLoggedIn) {
+  //     // this.toggle();
+  //     console.log(this.isLoggedIn);
+  //   } else {
+  //     // this.privilegeNone = true;
+  //     // this.ngOnInit();
+  //   }
+  // }
   viewNavbar(login: boolean) {
     if (login) {
       this.privilegeNone = false;
@@ -78,6 +82,32 @@ export class NavbarComponent implements OnInit {
         this.privilegeNGO = true;
       }
     }
+  }
+  // check() {
+  //   if (this.userOption === "logout") {
+  //     this.logout()
+  //   }
+  //   if (this.userOption === "profile") {
+  //     //
+  //   }
+  // }
+  logout() {
+    // this.ngOnInit();
+    // this.isLoggedIn = false;
+    // if (this.user === "Admin") {
+    this.privilegeAdmin = false;
+    this.privilegeNone = true;
+    // }
+    // if (this.user === "NGO") {
+    this.privilegeNGO = false;
+    //   this.privilegeNone = true;
+    // }
+    // if (this.user === "trainee") {
+    this.privilegeTrainee = false;
+    // this.loadfunc();
+    //   this.privilegeNone = true;
+    // }
+    this.router.navigate(['/'])
   }
   // ngAfterViewInit() {
   //   // this.isLoggedIn = this.loginService.getLoginStatus();

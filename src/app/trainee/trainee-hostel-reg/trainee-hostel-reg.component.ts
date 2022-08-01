@@ -1,29 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { HostelTraineeService } from 'src/app/hostel-trainee.service';
+import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 @Component({
   selector: 'app-trainee-hostel-reg',
   templateUrl: './trainee-hostel-reg.component.html',
   styleUrls: ['./trainee-hostel-reg.component.css']
 })
 export class TraineeHostelRegComponent implements OnInit {
+  username: string;
+  status: string;
   firstname: string;
+  middlename: string;
+  lastname: string;
+  state: string;
+  city: string;
+  address: string;
+  traineePan: string;
+  traineeEducation: string;
+  traineeAadhaar: number;
+  gFirstname: string;
+  gMiddlename: string;
+  gLastname: string;
+  gEducationDetails: string;
+  gRelation: string;
+  gMobile: number;
+  gEmail: string;
   hName: string;
   hLocation: string;
   hRanBy: string;
+  // aadhar: number;
   file: File;
-  constructor(private hostelService: HostelTraineeService) { }
+  constructor(private hostelService: HostelTraineeService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     this.getInfo();
   }
-
+  usernameSet() {
+    this.username = this.loginService.getUsername();
+    console.log(this.username);
+  }
   onSubmit() {
+    this.usernameSet()
     console.log(this.file)
     let data = {
+      username: this.username,
+      status: "pending",
       hName: this.hName,
       hLocation: this.hLocation,
       hRanBy: this.hRanBy,
-      file: this.file
+      file: this.file,
+      firstname: this.firstname,
+      middlename: this.middlename,
+      lastname: this.lastname,
+      state: this.state,
+      city: this.city,
+      address: this.address,
+      traineePan: this.traineePan,
+      traineeEducation: this.traineeEducation,
+      traineeAadhaar: this.traineeAadhaar,
+      gFirstname: this.gFirstname,
+      gMiddlename: this.gMiddlename,
+      gLastname: this.gLastname,
+      gEducationDetails: this.gEducationDetails,
+      gRelation: this.gRelation,
+      gMobile: this.gMobile,
+      gEmail: this.gEmail
       // traineeFirstname: this.firstname
 
     }
