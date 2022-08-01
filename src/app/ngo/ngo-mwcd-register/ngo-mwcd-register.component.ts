@@ -33,7 +33,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
   inchargeState: String;
   inchargecity: String;
   inchargeAddress: String;
-  inchargePan: String;
+  inchargePan: string;
   inchargeEdu: String;
   inchargeAadhar: Number;
   file: File;
@@ -60,10 +60,33 @@ export class NgoMwcdRegisterComponent implements OnInit {
     // }
     return true;
   }
+  checkPan(){
+    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test((this.inchargePan))){
+      alert("Enter correct PAN Number")
+      return false;
+    }
+    if (typeof this.inchargePan === "undefined") {
+      alert('undefined');
+     return false;
+    }
+    return true;
+  }
+  checkMobile(){
+    if (!/^[6-9]\d{9}$/.test(String(this.ngoMobile))){
+      alert("Mobile Wrong Format")
+      return false;
+    }
+    if (typeof this.ngoMobile === "undefined") {
+      alert('undefined');
+     return false;
+    }
+    return true;
+
+  }
   checkEmail() {
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.ngoEmail)) {
       // alert("Meeting specified requirements")
-      alert("Not meeting specified requirements")
+      alert(" Email Not meeting specified requirements")
       return false;
     }
     // else {
@@ -77,10 +100,11 @@ export class NgoMwcdRegisterComponent implements OnInit {
   }
   onSubmit() {
     // this.checkEmail();
-    this.checkAadhar();
+    // this.checkAadhar();
+  
     this.getusername()
     console.log(this.file);
-    if (this.checkEmail() && this.checkAadhar()) {
+    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
         username: this.username,
         status: "pending",
