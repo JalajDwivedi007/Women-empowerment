@@ -15,18 +15,39 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  forgotpassword() {
-    let data = {
-      username: this.username,
-      password: this.password,
-      confirmpassword: this.confirmpassword
+  checkPassword() {
+    if (this.password != this.confirmpassword) {
+      alert("Passwords dont match")
+      return false;
     }
-
-    this.loginService.forgotpassword(data).subscribe((res) => {
-      console.log(res);
-      alert("Password Changed Successfully!");
-      this.router.navigate(['login']);
-    })
+    if (typeof this.password === "undefined") {
+      alert('undefined');
+      return false;
+    }
+    return true;
+  }
+  forgotpassword() {
+    if(this.checkPassword()){
+      let data = {
+        username: this.username,
+        password: this.password,
+        confirmpassword: this.confirmpassword
+      }
+  
+      this.loginService.forgotpassword(data).subscribe((res) => {
+        console.log(res);
+        if (res === null) {
+          alert("The Username does not exist!")
+        }
+        else {
+          alert("Password Changed Successfully!");
+          this.router.navigate(['login']);
+        }
+        // alert("Password Changed Successfully!");
+        // this.router.navigate(['login']);
+      })
+    }    
+      
   }
 
 }

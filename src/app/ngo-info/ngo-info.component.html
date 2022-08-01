@@ -1,4 +1,5 @@
-<section class="sec mt-3 mb-3">
+<section class="sec mt-3">
+  <div *ngIf="items1.length>0">
     <div class="card bg-white mx-auto" style="width:60rem;">
       <h3 class="text-center">Table</h3>
       <hr />
@@ -23,4 +24,17 @@
         </tbody>
       </table>
     </div>
-  </section>
+    <div style="height:14rem;">
+
+    </div>
+  </div>
+  <div *ngIf="items1.length==0">
+    <div style="height:3rem;"></div>
+    <div class="card mx-auto " id="norecords" style="width:25rem;">
+      <h3 class="text-center text-primary ">No records found!</h3>
+      <img class="center mx-auto" src="../../assets/images/no-record-found.png" alt="No Records Pic" height="250px"
+        width="250px">
+    </div>
+    <div style="height:13rem;"></div>
+  </div>
+</section>
