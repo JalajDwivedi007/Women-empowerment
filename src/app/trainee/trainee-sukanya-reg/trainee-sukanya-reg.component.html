@@ -6,67 +6,77 @@
     <h4>Personal Details</h4>
     <hr>
     <form enctype="multipart/form" (ngSubmit)="onSubmit()">
-    <div class="d-flex row">
-        <div class="col-sm-4 row">
-            <label for="firstname" class="mt-1 col-sm-6">First Name:</label>
-            <input type="text" name="firstname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="firstname">
+        <div class="d-flex row">
+            <div class="col-sm-4 row">
+                <label for="firstname" class="mt-1 col-sm-6">First Name:</label>
+                <input type="text" name="firstname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="firstname">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="middlename" class="mt-1 col-sm-6">Middle Name:</label>
+                <input type="text" name="middlename" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="middlename">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="lastname" class="mt-1 col-sm-6">Last Name:</label>
+                <input type="text" name="lastname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="lastname">
+            </div>
         </div>
-        <div class="col-sm-4 row">
-            <label for="middlename" class="mt-1 col-sm-6">Middle Name:</label>
-            <input type="text" name="middlename" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="middlename">
+        <div class="d-flex mt-2 row">
+            <div class="col-sm-4 row">
+                <label for="state" class="mt-1 col-sm-6">State:</label>
+                <input type="text" name="state" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="state">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="city" class="mt-1 col-sm-6">City:</label>
+                <input type="text" name="city" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="city">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="address" class="mt-1 col-sm-6">Complete Address:</label>
+                <input type="text" name="address" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="address">
+            </div>
         </div>
-        <div class="col-sm-4 row">
-            <label for="lastname" class="mt-1 col-sm-6">Last Name:</label>
-            <input type="text" name="lastname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="lastname">
+        <div class="d-flex mt-2 row">
+            <div class="col-sm-4 row">
+                <label for="aadhar" class="mt-1 col-sm-6">Aadhar:</label>
+                <input type="text" name="aadhar" class="mt-1 mb-1 mt-1 col-sm-6 rounded" [(ngModel)]="aadhar">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="pan" class="mt-1 col-sm-6">PAN :</label>
+                <input type="text" name="pan" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="pan">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="education" class="mt-1 col-sm-6">Education:</label>
+                <!-- <input type="text" name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="education"> -->
+                <select name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="education">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="B.Ed">B.Ed</option>
+                    <option value="BA">BA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="High School">High School</option>
+                    <option value="Senior Secondary">Senior Secondary</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="d-flex mt-2 row">
-        <div class="col-sm-4 row">
-            <label for="state" class="mt-1 col-sm-6">State:</label>
-            <input type="text" name="state" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="state">
+        <hr>
+        <h4>Family Details</h4>
+        <hr>
+        <h5>Guardian Details</h5>
+        <div class="d-flex row">
+            <div class="col-sm-4 row">
+                <label for="gfirstname" class="mt-1 col-sm-6">First Name:</label>
+                <input type="text" name="gfirstname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gfirstname">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="gmiddlename" class="mt-1 col-sm-6">Middle Name:</label>
+                <input type="text" name="gmiddlename" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gmiddlename">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="glastname" class="mt-1 col-sm-6">Last Name:</label>
+                <input type="text" name="glastname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="glastname">
+            </div>
         </div>
-        <div class="col-sm-4 row">
-            <label for="city" class="mt-1 col-sm-6">City:</label>
-            <input type="text" name="city" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="city">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="address" class="mt-1 col-sm-6">Complete Address:</label>
-            <input type="text" name="address" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="address">
-        </div>
-    </div>
-    <div class="d-flex mt-2 row">
-        <div class="col-sm-4 row">
-            <label for="aadhar" class="mt-1 col-sm-6">Aadhar:</label>
-            <input type="text" name="aadhar" class="mt-1 mb-1 mt-1 col-sm-6 rounded" [(ngModel)]="aadhar">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="pan" class="mt-1 col-sm-6">PAN :</label>
-            <input type="text" name="pan" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="pan">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="education" class="mt-1 col-sm-6">Education:</label>
-            <input type="text" name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="education">
-        </div>
-    </div>
-    <hr>
-    <h4>Family Details</h4>
-    <hr>
-    <h5>Guardian Details</h5>
-    <div class="d-flex row">
-        <div class="col-sm-4 row">
-            <label for="gfirstname" class="mt-1 col-sm-6">First Name:</label>
-            <input type="text" name="gfirstname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gfirstname">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="gmiddlename" class="mt-1 col-sm-6">Middle Name:</label>
-            <input type="text" name="gmiddlename" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gmiddlename">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="glastname" class="mt-1 col-sm-6">Last Name:</label>
-            <input type="text" name="glastname" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="glastname">
-        </div>
-    </div>
-    <!-- <div class="d-flex mt-2 row">
+        <!-- <div class="d-flex mt-2 row">
         <div class="col-sm-4 row">
             <label for="state" class="mt-1 col-sm-6">State:</label>
             <input type="text" name="state" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gstate">
@@ -80,66 +90,83 @@
             <input type="text" name="address" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gaddress">
         </div>
     </div> -->
-    <div class="d-flex mt-2 row">
-        <!-- <div class="col-sm-4 row">
+        <div class="d-flex mt-2 row">
+            <!-- <div class="col-sm-4 row">
             <label for="aadhar" class="mt-1 col-sm-6">Aadhar:</label>
             <input type="text" name="aadhar" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gaadhar">
         </div> -->
-        <!-- <div class="col-sm-4 row">
+            <!-- <div class="col-sm-4 row">
             <label for="pan" class="mt-1 col-sm-6">PAN :</label>
             <input type="text" name="pan" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gpan">
         </div> -->
-        <div class="col-sm-4 row">
-            <label for="education" class="mt-1 col-sm-6">Education:</label>
-            <input type="text" name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="geducation">
+            <div class="col-sm-4 row">
+                <label for="education" class="mt-1 col-sm-6">Education:</label>
+                <!-- <input type="text" name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="geducation"> -->
+                <select name="education" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="geducation">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="B.Ed">B.Ed</option>
+                    <option value="BA">BA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="High School">High School</option>
+                    <option value="Senior Secondary">Senior Secondary</option>
+                </select>
+            </div>
+            <div class="col-sm-4 row mt-2 d-flex">
+                <label for="relation" class="mt-1 col-sm-6">Relation:</label>
+                <!-- <input type="text" name="relation" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="relation"> -->
+                <select name="relation" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="relation">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Other Relative">Other Relative</option>
+                </select>
+            </div>
         </div>
-        <div class="col-sm-4 row mt-2 d-flex">
-            <label for="relation" class="mt-1 col-sm-6">Relation:</label>
-            <input type="text" name="relation" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="relation">
-        </div>
-    </div>
-    <!-- <div class="row">
+        <!-- <div class="row">
         <div class="col-sm-4 row mt-2 d-flex">
             <label for="relation" class="mt-1 col-sm-6">Relation:</label>
             <input type="text" name="relation" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="relation">
         </div>
     </div> -->
-    <hr>
-    <h4>Contact Details</h4>
-    <hr>
-    <div class="d-flex mt-2 row">
-        <div class="col-sm-4 row">
-            <label for="mobile" class="mt-1 col-sm-6">Mobile:</label>
-            <p class="mt-1 col-sm-6">Mobile Number registered</p>
+        <hr>
+        <h4>Contact Details</h4>
+        <hr>
+        <div class="d-flex mt-2 row">
+            <div class="col-sm-4 row">
+                <label for="mobile" class="mt-1 col-sm-6">Mobile:</label>
+                <p class="mt-1 col-sm-6">Mobile Number registered</p>
+            </div>
+            <div class="col-sm-4 row">
+                <label for="email" class="mt-1 col-sm-6">Email:</label>
+                <p class="mt-1 col-sm-6">Email registered</p>
+            </div>
+            <div class="col-sm-4 row">
+                <label for="dob" class="mt-1 col-sm-6">Date of Birth:</label>
+                <p class="mt-1 col-sm-6">DOB registered</p>
+            </div>
         </div>
-        <div class="col-sm-4 row">
-            <label for="email" class="mt-1 col-sm-6">Email:</label>
-            <p class="mt-1 col-sm-6">Email registered</p>
+        <div class="d-flex mt-2 row">
+            <div class="col-sm-4 row">
+                <label for="gmobile" class="mt-1 col-sm-6">Guardian Mobile:</label>
+                <input type="text" name="gmobile" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gmobile">
+            </div>
+            <div class="col-sm-4 row">
+                <label for="gemail" class="mt-1 col-sm-6">Guardian Email:</label>
+                <input type="text" name="gemail" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gemail">
+            </div>
         </div>
-        <div class="col-sm-4 row">
-            <label for="dob" class="mt-1 col-sm-6">Date of Birth:</label>
-            <p class="mt-1 col-sm-6">DOB registered</p>
-        </div>
-    </div>
-    <div class="d-flex mt-2 row">
-        <div class="col-sm-4 row">
-            <label for="gmobile" class="mt-1 col-sm-6">Guardian Mobile:</label>
-            <input type="text" name="gmobile" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gmobile">
-        </div>
-        <div class="col-sm-4 row">
-            <label for="gemail" class="mt-1 col-sm-6">Guardian Email:</label>
-            <input type="text" name="gemail" class="mt-1 mb-1 col-sm-6 rounded" [(ngModel)]="gemail">
-        </div>
-    </div>
-    <hr>
-    <h4>Documents</h4>
-    <hr>
-    <div class="d-flex mt-2 row">
-        <div class="col-sm-4 row">
-            <label for="faadhar" class="mt-1 col-sm-6">Aadhar:</label>
-            <input type="file" name="faadhar" class="mt-1 mb-1 col-sm-6 rounded" (change)="fileChange($event)">
-        </div>
-        <!-- <div class="col-sm-4 row">
+        <hr>
+        <h4>Documents</h4>
+        <hr>
+        <div class="d-flex mt-2 row">
+            <div class="col-sm-4 row">
+                <label for="faadhar" class="mt-1 col-sm-6">Supporting Documents:</label>
+                <input type="file" name="faadhar" class="mt-1 mb-1 col-sm-6 rounded" (change)="fileChange($event)">
+            </div>
+            <!-- <div class="col-sm-4 row">
             <label for="marksheet" class="mt-1 col-sm-6">Marksheet:</label>
             <input type="file" name="marksheet" class="mt-1 mb-1 col-sm-6 rounded">
         </div>
@@ -147,8 +174,10 @@
             <label for="documentsup" class="mt-1 col-sm-6">Supporting Documents:</label>
             <input type="file" name="documentsup" class="mt-1 mb-1 col-sm-6 rounded">
         </div> -->
-    </div>
-    <button class="btn btn-success col-sm-3 mx-auto mt-2" type="submit">Submit</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-success col-sm-3 mx-auto mt-2" type="submit">Submit</button>
+        </div>
     </form>
 </div>
 <div style="height:5rem;"></div>
