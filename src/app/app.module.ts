@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 //app.module.ts
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -77,9 +77,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-
     BrowserAnimationsModule,
   ],
   providers: [],
