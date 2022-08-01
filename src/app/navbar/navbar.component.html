@@ -1,6 +1,6 @@
 <div class="bg-primary" *ngIf="privilegeTrainee">
     <nav class="p-2 navbar">
-        <a href="#" class="text-white traineeAnchor">HOME</a>
+        <a href="#" class="text-white traineeAnchor" routerLink="/">HOME</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/about-us">ABOUT US</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/guidelines">GUIDELINES</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/training">TRAINING SECTORS</a>
@@ -8,7 +8,7 @@
         <a href="#" class="text-white traineeAnchor" routerLink="/trainee-register-home">REGISTRATION</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/trainee-info">STATUS</a>
         <a href="#" class="text-white traineeAnchor" routerLink="/faq">FAQ</a>
-        <a href="#" class="text-white traineeAnchor">PROFILE</a>
+        <!-- <a href="#" class="text-white traineeAnchor">PROFILE</a> -->
         <a href="#" class="text-white traineeAnchor" (click)="logout()">LOGOUT</a>
         <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>
@@ -19,13 +19,13 @@
 </div>
 <div class="bg-primary" *ngIf="privilegeNGO">
     <nav class="p-2 navbar">
-        <a href="#" class="text-white ngoAnchor">HOME</a>
+        <a href="#" class="text-white ngoAnchor" routerLink="/">HOME</a>
         <a href="#" class="text-white ngoAnchor" routerLink="/criteriaNGO">CRITERIA</a>
-        <a href="#" class="text-white ngoAnchor">ORGANIZATIONS</a>
+        <!-- <a href="#" class="text-white ngoAnchor">ORGANIZATIONS</a> -->
         <a href="#" class="text-white ngoAnchor" routerLink="/funding-norms">FUNDING NORMS FAQ</a>
         <a href="#" class="text-white ngoAnchor" routerLink="/ngo-register-home">REGISTER</a>
         <a href="#" class="text-white ngoAnchor" routerLink="/ngo-info">STATUS</a>
-        <a href="#" class="text-white ngoAnchor">PROFILE</a>
+        <!-- <a href="#" class="text-white ngoAnchor">PROFILE</a> -->
         <a href="#" class="text-white ngoAnchor" (click)="logout()">LOGOUT</a>
         <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>
@@ -36,11 +36,11 @@
 </div>
 <div class="bg-primary" *ngIf="privilegeAdmin">
     <nav class="p-2 navbar">
-        <a href="#" class="text-white adminAnchor p-1">HOME</a>
+        <a href="#" class="text-white adminAnchor p-1" routerLink="/">HOME</a>
         <a href="#" class="text-white adminAnchor p-1" routerLink="/about-us">ABOUT US</a>
         <a href="#" class="text-white adminAnchor p-1" routerLink="/admin-ngo">NGO</a>
         <a href="#" class="text-white adminAnchor p-1" routerLink="/admin-trainee">TRAINEES</a>
-        <a href="#" class="text-white adminAnchor p-1">PROFILE</a>
+        <!-- <a href="#" class="text-white adminAnchor p-1">PROFILE</a> -->
         <a href="#" class="text-white adminAnchor p-1" (click)="logout()">LOGOUT</a>
         <!-- <select class="ngoAnchor" placeholder="PROFILE">
             <option selected disabled>USER</option>

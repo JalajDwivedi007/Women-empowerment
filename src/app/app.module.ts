@@ -37,6 +37,7 @@ import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgoInfoComponent } from './ngo-info/ngo-info.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -71,6 +72,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminTraineeComponent,
     HomePageComponent,
     NgoInfoComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,4 +85,4 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

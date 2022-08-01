@@ -1,33 +1,44 @@
 <section class="section1 mt-3">
-  <div class="container bg-white">
+  <div class="card bg-white mx-auto" *ngIf="result1.length>0" style="width:60rem;">
     <!-- <p><a href="#">Home </a>>> About Us</p> -->
     <h3>NGOs</h3>
     <hr /><br />
     <div *ngFor="let res of result1">
-    <ul>
-      <li><h4 class="text-capitalize">{{res.ngoName}}</h4>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <ul class="list-unstyled">
-              <li>Establish Date : {{res.ngoDOE}}</li>
-              <li>Number of Members : {{res.members}}</li>
-              <li>Address : {{res.ngoAddress}}</li>
-              <li>Work Areas : {{res.workAreas}}</li>
-            </ul>
+      <ul>
+        <li>
+          <h4 class="text-capitalize">{{res.ngoName}}</h4>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li>Establish Date : {{res.ngoDOE}}</li>
+                  <li>Number of Members : {{res.members}}</li>
+                  <li>Address : {{res.ngoAddress}}</li>
+                  <li>Work Areas : {{res.workAreas}}</li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-unstyled">Contact Us:
+                  <li>Mobile No : {{res.ngoMobile}}</li>
+                  <li>Email : {{res.ngoEmail}}</li>
+                  <li>Website : {{res.ngoWebsite}}</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col">
-            <ul class="list-unstyled">Contact Us:
-              <li>Mobile No : {{res.ngoMobile}}</li>
-              <li>Email : {{res.ngoEmail}}</li>
-              <li>Website : {{res.ngoWebsite}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      </li>
-    </ul>
-    <hr />
+        </li>
+      </ul>
+      <hr />
+    </div>
+    <div style="height:4.3rem;"></div>
   </div>
+  <div *ngIf="result1.length==0">
+    <div style="height:3rem;"></div>
+    <div class="card mx-auto " id="norecords" style="width:25rem;">
+      <h3 class="text-center text-primary ">No records found!</h3>
+      <img class="center mx-auto" src="../../assets/images/no-record-found.png" alt="No Records Pic" height="250px"
+        width="250px">
+    </div>
+    <div style="height:11rem;"></div>
   </div>
 </section>

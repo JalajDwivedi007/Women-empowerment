@@ -107,7 +107,9 @@ export class NavbarComponent implements OnInit {
     // this.loadfunc();
     //   this.privilegeNone = true;
     // }
+    // this.isLoggedIn = false;
     this.router.navigate(['/'])
+    // this.ngOnInit();
   }
   // ngAfterViewInit() {
   //   // this.isLoggedIn = this.loginService.getLoginStatus();

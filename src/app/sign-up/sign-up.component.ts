@@ -18,8 +18,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  checkEmail() 
-  {
+  checkEmail() {
     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
       // alert("Meeting specified requirements")
       alert(" Email Not meeting specified requirements")
@@ -34,62 +33,64 @@ export class SignUpComponent implements OnInit {
     }
     return true;
   }
-  checkMobile(){
-    if (!/^[6-9]\d{9}$/.test(String(this.mobile))){
+  checkMobile() {
+    if (!/^[6-9]\d{9}$/.test(String(this.mobile))) {
       alert("Mobile Wrong Format")
       return false;
     }
     if (typeof this.mobile === "undefined") {
       alert('undefined');
-     return false;
+      return false;
     }
     return true;
 
   }
-  checkPassword()
-  {
-    if(this.password!=this.confirmpassword)
-    {
+  checkPassword() {
+    if (this.password != this.confirmpassword) {
       alert("Passwords dont match")
       return false;
     }
     if (typeof this.password === "undefined") {
       alert('undefined');
-     return false;
+      return false;
     }
     return true;
   }
-  checkUsername()
-  {
-    if(!/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(this.username))
-    {
+  checkUsername() {
+    if (!/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(this.username)) {
       alert("Check Username Format")
       return false;
     }
     if (typeof this.username === "undefined") {
       alert('undefined');
-     return false;
+      return false;
     }
-    return true; 
+    return true;
   }
   onSubmit() {
     console.log(this.user_type)
-    if(this.checkEmail() && this.checkMobile() && this.checkPassword() && this.checkUsername())
-    {
-    let data = {
-      username: this.username,
-      password: this.password,
-      confirmpassword: this.confirmpassword,
-      dob: this.dob,
-      user_type: this.user_type,
-      mobile: this.mobile,
-      email: this.email
+    if (this.checkEmail() && this.checkMobile() && this.checkPassword() && this.checkUsername()) {
+      let data = {
+        username: this.username,
+        password: this.password,
+        confirmpassword: this.confirmpassword,
+        dob: this.dob,
+        user_type: this.user_type,
+        mobile: this.mobile,
+        email: this.email
+      }
+      console.log(data)
+      this.signup.postDetails(data).subscribe((res) => {
+        console.log(res["status"]);
+        if (res["status"] === "User Record  Added Successfully!") {
+          alert(res["status"]);
+          this.router.navigate(["login"]);
+        }
+        else {
+          alert(res["status"]);
+        }
+        // this.router.navigate(["login"]);
+      })
     }
-    console.log(data)
-    this.signup.postDetails(data).subscribe((res) => {
-      console.log(res);
-      this.router.navigate(["login"]);
-    })
   }
-}
 }
