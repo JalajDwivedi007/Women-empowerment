@@ -29,8 +29,23 @@ export class LoginComponent implements OnInit {
     });
     // console.log(this.items);
   }
-  onLogin() {
-    let login = {
+  checkUsername()
+  {
+    if(!/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(this.username))
+    {
+      alert("Check Username Format")
+      return false;
+    }
+    if (typeof this.username === "undefined") {
+      alert('undefined');
+     return false;
+    }
+    return true; 
+  }
+  onLogin() 
+  {
+
+    if(this.checkUsername()){let login = {
       username: this.username,
       password: this.password
     }
@@ -59,7 +74,8 @@ export class LoginComponent implements OnInit {
         this.loginService.setLoginStatus(true);
         this.router.navigate(["/"])
       }
-    })
+    })}
+    
 
   }
 

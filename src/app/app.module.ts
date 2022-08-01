@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//app.module.ts
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
@@ -34,6 +37,7 @@ import { TraineeInfoComponent } from './trainee-info/trainee-info.component';
 import { AdminTraineeComponent } from './admin-trainee/admin-trainee.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgoInfoComponent } from './ngo-info/ngo-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -72,9 +76,11 @@ import { NgoInfoComponent } from './ngo-info/ngo-info.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
