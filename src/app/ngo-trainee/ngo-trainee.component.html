@@ -3,13 +3,13 @@
     <!-- <p><a href="#">Home </a>>> About Us</p> -->
     <h3>NGOs</h3>
     <hr /><br />
-    <div *ngFor="let res of result">
+    <div *ngFor="let res of result1">
     <ul>
       <li><h4 class="text-capitalize">{{res.ngoName}}</h4>
       <div class="container">
         <div class="row">
           <div class="col">
-            <ul class="list-unstyled md-6">
+            <ul class="list-unstyled">
               <li>Establish Date : {{res.ngoDOE}}</li>
               <li>Number of Members : {{res.members}}</li>
               <li>Address : {{res.ngoAddress}}</li>
