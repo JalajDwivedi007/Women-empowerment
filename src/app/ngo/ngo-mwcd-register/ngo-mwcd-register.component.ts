@@ -182,6 +182,9 @@ export class NgoMwcdRegisterComponent implements OnInit {
     //   this.getInfo();
     // });
   }
+  getToday(): string {
+    return new Date().toISOString().split('T')[0]
+  }
   getInfo() {
     this.ngoService.getData().subscribe((res) => {
       console.log(res);

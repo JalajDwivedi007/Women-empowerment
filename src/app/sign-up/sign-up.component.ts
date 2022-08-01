@@ -56,9 +56,12 @@ export class SignUpComponent implements OnInit {
     }
     return true;
   }
+  getToday(): string {
+    return new Date().toISOString().split('T')[0]
+  }
   checkUsername() {
     if (!/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(this.username)) {
-      alert("Check Username Format")
+      alert("Username must be 8 to 20 characters long and should be alphanumeric")
       return false;
     }
     if (typeof this.username === "undefined") {
