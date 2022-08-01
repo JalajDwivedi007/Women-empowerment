@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CourseTraineeService } from 'src/app/course-trainee.service';
 import { HostelTraineeService } from '../hostel-trainee.service';
 import { SukanyaTraineeService } from '../sukanya-trainee.service';
+// import { saveAs } from 'file-saver';
+import * as fileSaver from 'file-saver';
 
 @Component({
   selector: 'app-admin-trainee',
@@ -12,7 +14,7 @@ export class AdminTraineeComponent implements OnInit {
   results: any;
   results1: any;
   results2: any;
-
+  appPen: boolean = true;
   constructor(private courseService: CourseTraineeService, private hostelService: HostelTraineeService, private sukanyaService: SukanyaTraineeService) { }
 
   ngOnInit(): void {
@@ -34,9 +36,28 @@ export class AdminTraineeComponent implements OnInit {
       this.results2 = res2;
     });
   }
-  documentDownload(id: number) {
-    this.courseService.downloadFile(id).subscribe((res) => {
-      console.log(res);
+  // blob => saveAs(blob, fileData.filename)
+  // this.downloadService
+  //     .download(fileData.filename)
+  //     .subscribe(blob => saveAs(blob, fileData.filename));
+  documentDownload(id: number, filename: string) {
+    this.courseService.downloadFile(id).subscribe(blob => fileSaver.saveAs(blob, filename));
+
+  }
+  approveApp(id: number) {
+    this.courseService.changeApplicationStatus(id, "Approved").subscribe((res) => {
+      console.log(id);
+      this.appPen = false;
+    })
+  }
+  rejectApp(id: number) {
+    this.courseService.changeApplicationStatus(id, "Rejected").subscribe((res) => {
+      console.log(id);
+      this.appPen = false;
     })
   }
 }
+
+// function saveAs(blob: Blob, id: number): void {
+//   throw new Error('Function not implemented.');
+// }

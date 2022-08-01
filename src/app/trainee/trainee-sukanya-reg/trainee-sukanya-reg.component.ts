@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 import { SukanyaTraineeService } from 'src/app/sukanya-trainee.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { SukanyaTraineeService } from 'src/app/sukanya-trainee.service';
   styleUrls: ['./trainee-sukanya-reg.component.css']
 })
 export class TraineeSukanyaRegComponent implements OnInit {
+  username: string;
+  status: string;
   firstname: string;
   middlename: string;
   lastname: string;
@@ -32,15 +35,20 @@ export class TraineeSukanyaRegComponent implements OnInit {
 
 
 
-  constructor(private sukanyaService: SukanyaTraineeService) { }
+  constructor(private sukanyaService: SukanyaTraineeService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     this.getInfo();
   }
-
+  getUsername() {
+    this.username = this.loginService.getUsername();
+  }
   onSubmit() {
+    this.getUsername()
     console.log(this.file)
     let data = {
+      username: this.username,
+      status: "pending",
       firstname: this.firstname,
       middlename: this.middlename,
       lastname: this.lastname,
@@ -77,14 +85,14 @@ export class TraineeSukanyaRegComponent implements OnInit {
     });
   }
 
-    fileChange(event: any) {
-      // Instantiate an object to read the file content
-      let reader = new FileReader();
-      // when the load event is fired and the file not empty
-      if (event.target.files && event.target.files.length > 0) {
-        // Fill file variable with the file content
-        this.file = event.target.files[0];
-      }
+  fileChange(event: any) {
+    // Instantiate an object to read the file content
+    let reader = new FileReader();
+    // when the load event is fired and the file not empty
+    if (event.target.files && event.target.files.length > 0) {
+      // Fill file variable with the file content
+      this.file = event.target.files[0];
     }
+  }
 
 }

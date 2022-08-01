@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HostelTraineeService } from 'src/app/hostel-trainee.service';
+import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 @Component({
   selector: 'app-trainee-hostel-reg',
   templateUrl: './trainee-hostel-reg.component.html',
   styleUrls: ['./trainee-hostel-reg.component.css']
 })
 export class TraineeHostelRegComponent implements OnInit {
+  username: string;
+  status: string;
   firstname: string;
   middlename: string;
   lastname: string;
@@ -27,15 +30,21 @@ export class TraineeHostelRegComponent implements OnInit {
   hRanBy: string;
   // aadhar: number;
   file: File;
-  constructor(private hostelService: HostelTraineeService) { }
+  constructor(private hostelService: HostelTraineeService, private loginService: LoginSignupApprovalService) { }
 
   ngOnInit(): void {
     this.getInfo();
   }
-
+  usernameSet() {
+    this.username = this.loginService.getUsername();
+    console.log(this.username);
+  }
   onSubmit() {
+    this.usernameSet()
     console.log(this.file)
     let data = {
+      username: this.username,
+      status: "pending",
       hName: this.hName,
       hLocation: this.hLocation,
       hRanBy: this.hRanBy,

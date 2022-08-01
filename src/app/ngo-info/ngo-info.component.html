@@ -1,0 +1,26 @@
+<section class="sec mt-3 mb-3">
+    <div class="card bg-white mx-auto" style="width:60rem;">
+      <h3 class="text-center">Table</h3>
+      <hr />
+      <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No</th>
+            <th scope="col">Ngo Name</th>
+            <th scope="col">Project Incharge</th>
+            <th scope="col">Grant Requested</th>
+            <th scope="col">Ngo Application Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items1">
+            <td>{{item.ngoId}}</td>
+            <td>{{item.ngoName}}</td>
+            <td>{{item.fname+" "+item.lname}}</td>
+            <td>{{item.ngoAmount}}</td>
+            <td>{{item.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
