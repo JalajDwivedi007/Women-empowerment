@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginSignupApprovalService } from 'src/app/services/login-signup-approval.service';
 import { SukanyaTraineeService } from 'src/app/sukanya-trainee.service';
 
@@ -30,12 +31,12 @@ export class TraineeSukanyaRegComponent implements OnInit {
   geducation: string;
   relation: string;
   gmobile: number;
-  gemail: number;
+  gemail: string;
   file: File;
 
 
 
-  constructor(private sukanyaService: SukanyaTraineeService, private loginService: LoginSignupApprovalService) { }
+  constructor(private sukanyaService: SukanyaTraineeService, private loginService: LoginSignupApprovalService, private router: Router) { }
 
   ngOnInit(): void {
     this.getInfo();
@@ -43,41 +44,90 @@ export class TraineeSukanyaRegComponent implements OnInit {
   getUsername() {
     this.username = this.loginService.getUsername();
   }
+  checkMobile(){
+    console.log(this.gmobile);
+    if(!/^[6-9]\d{9}$/.test(this.gmobile.toString())){
+      alert('Mention correct Mobile Number');
+      return false;
+    }
+    if (typeof this.gmobile === "undefined") {
+       alert('undefined');
+       return false;
+     }
+    return true;
+ }
+  checkPan(){
+    console.log(this.pan)
+    if(!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(this.pan)){
+      alert('Mention correct Pan');
+      return false;
+    }
+    if (typeof this.pan === "undefined") {
+      alert('undefined');
+      return false;
+    }
+    return true; 
+    }
+  checkAadhar() {
+    console.log(this.aadhar)
+    if (!/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(this.aadhar.toString())) {
+      alert('Mention correct aadhar')
+      return false;
+    }
+    if (typeof this.aadhar === "undefined") {
+      alert('undefined');
+      return false;
+    }
+    return true;
+  }
+  checkEmail() {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.gemail)) {
+      alert("Mention correct Email")
+      return false;
+    }
+    if (typeof this.gemail === "undefined") {
+      alert('undefined');
+      return false;
+    }
+    return true;
+  }
   onSubmit() {
     this.getUsername()
     console.log(this.file)
-    let data = {
-      username: this.username,
-      status: "pending",
-      firstname: this.firstname,
-      middlename: this.middlename,
-      lastname: this.lastname,
-      state: this.state,
-      city: this.city,
-      address: this.address,
-      aadhar: this.aadhar,
-      pan: this.pan,
-      education: this.education,
-      gfirstname: this.gfirstname,
-      gmiddlename: this.gmiddlename,
-      glastname: this.glastname,
-      // gstate: this.gstate,
-      // gcity: this.gcity,
-      // gaddress: this.gaddress,
-      //paadhar: this.gaadhar,
-      //gpan: this.gpan,
-      geducation: this.geducation,
-      relation: this.relation,
-      gmobile: this.gmobile,
-      gemail: this.gemail,
-      file: this.file
+    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()){
+      let data = {
+        username: this.username,
+        status: "pending",
+        firstname: this.firstname,
+        middlename: this.middlename,
+        lastname: this.lastname,
+        state: this.state,
+        city: this.city,
+        address: this.address,
+        aadhar: this.aadhar,
+        pan: this.pan,
+        education: this.education,
+        gfirstname: this.gfirstname,
+        gmiddlename: this.gmiddlename,
+        glastname: this.glastname,
+        // gstate: this.gstate,
+        // gcity: this.gcity,
+        // gaddress: this.gaddress,
+        //paadhar: this.gaadhar,
+        //gpan: this.gpan,
+        geducation: this.geducation,
+        relation: this.relation,
+        gmobile: this.gmobile,
+        gemail: this.gemail,
+        file: this.file
+      }
+      this.sukanyaService.postData(data).subscribe((res) => {
+        // console.log(res);
+        this.getInfo();
+        alert('Details Submitted Successfully!')
+        this.router.navigate(['trainee-info'])
+      })
     }
-
-    this.sukanyaService.postData(data).subscribe((res) => {
-      // console.log(res);
-      this.getInfo();
-    })
-
   }
   getInfo() {
     this.sukanyaService.getData().subscribe((res) => {
