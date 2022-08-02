@@ -109,8 +109,15 @@ export class NavbarComponent implements OnInit {
     // }
     // this.isLoggedIn = false;
 
-    window.location.reload();
+    // window.location.reload();
     this.router.navigate(['/'])
+      .then(() => {
+        window.location.reload();
+      });
+    // this.router.navigate(['/'])
+    // window.location.reload();
+    // this.router.navigate(['/'])
+    // this.router.navigate(['/'])
     // this.ngOnInit();
   }
   // ngAfterViewInit() {

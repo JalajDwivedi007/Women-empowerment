@@ -63,25 +63,25 @@ export class NgoMwcdRegisterComponent implements OnInit {
     // }
     return true;
   }
-  checkPan(){
-    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test((this.inchargePan))){
+  checkPan() {
+    if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test((this.inchargePan))) {
       alert("Enter correct PAN Number")
       return false;
     }
     if (typeof this.inchargePan === "undefined") {
       alert('undefined');
-     return false;
+      return false;
     }
     return true;
   }
-  checkMobile(){
-    if (!/^[6-9]\d{9}$/.test(String(this.ngoMobile))){
+  checkMobile() {
+    if (!/^[6-9]\d{9}$/.test(String(this.ngoMobile))) {
       alert("Mobile Wrong Format")
       return false;
     }
     if (typeof this.ngoMobile === "undefined") {
       alert('undefined');
-     return false;
+      return false;
     }
     return true;
 
@@ -130,7 +130,7 @@ export class NgoMwcdRegisterComponent implements OnInit {
         ngoWebsite: this.ngoWebsite,
         //Project in-charge
         fname: this.fname,
-        mname: this.mname,
+        mname: typeof this.mname === "undefined" ? "" : this.mname,
         lname: this.lname,
         inchargeState: this.inchargeState,
         inchargecity: this.inchargecity,
