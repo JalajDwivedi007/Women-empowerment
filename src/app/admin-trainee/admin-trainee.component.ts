@@ -4,6 +4,7 @@ import { HostelTraineeService } from '../hostel-trainee.service';
 import { SukanyaTraineeService } from '../sukanya-trainee.service';
 // import { saveAs } from 'file-saver';
 import * as fileSaver from 'file-saver';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-trainee',
@@ -20,7 +21,7 @@ export class AdminTraineeComponent implements OnInit {
   appPen: boolean = true;
   appPen1: boolean = true;
   appPen2: boolean = true;
-  constructor(private courseService: CourseTraineeService, private hostelService: HostelTraineeService, private sukanyaService: SukanyaTraineeService) { }
+  constructor(private router: Router, private courseService: CourseTraineeService, private hostelService: HostelTraineeService, private sukanyaService: SukanyaTraineeService) { }
 
   ngOnInit(): void {
     this.getInfo();

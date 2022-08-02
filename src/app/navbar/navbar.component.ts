@@ -108,6 +108,8 @@ export class NavbarComponent implements OnInit {
     //   this.privilegeNone = true;
     // }
     // this.isLoggedIn = false;
+
+    window.location.reload();
     this.router.navigate(['/'])
     // this.ngOnInit();
   }

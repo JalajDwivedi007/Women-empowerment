@@ -27,13 +27,13 @@ export class ForgotPasswordComponent implements OnInit {
     return true;
   }
   forgotpassword() {
-    if(this.checkPassword()){
+    if (this.checkPassword()) {
       let data = {
         username: this.username,
         password: this.password,
         confirmpassword: this.confirmpassword
       }
-  
+
       this.loginService.forgotpassword(data).subscribe((res) => {
         console.log(res);
         if (res === null) {
@@ -46,8 +46,8 @@ export class ForgotPasswordComponent implements OnInit {
         // alert("Password Changed Successfully!");
         // this.router.navigate(['login']);
       })
-    }    
-      
+    }
+
   }
 
 }
