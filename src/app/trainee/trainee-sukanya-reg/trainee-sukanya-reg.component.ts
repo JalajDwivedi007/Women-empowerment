@@ -44,21 +44,21 @@ export class TraineeSukanyaRegComponent implements OnInit {
   getUsername() {
     this.username = this.loginService.getUsername();
   }
-  checkMobile(){
+  checkMobile() {
     console.log(this.gmobile);
-    if(!/^[6-9]\d{9}$/.test(this.gmobile.toString())){
+    if (!/^[6-9]\d{9}$/.test(this.gmobile.toString())) {
       alert('Mention correct Mobile Number');
       return false;
     }
     if (typeof this.gmobile === "undefined") {
-       alert('undefined');
-       return false;
-     }
+      alert('undefined');
+      return false;
+    }
     return true;
- }
-  checkPan(){
+  }
+  checkPan() {
     console.log(this.pan)
-    if(!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(this.pan)){
+    if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(this.pan)) {
       alert('Mention correct Pan');
       return false;
     }
@@ -66,8 +66,8 @@ export class TraineeSukanyaRegComponent implements OnInit {
       alert('undefined');
       return false;
     }
-    return true; 
-    }
+    return true;
+  }
   checkAadhar() {
     console.log(this.aadhar)
     if (!/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(this.aadhar.toString())) {
@@ -94,12 +94,12 @@ export class TraineeSukanyaRegComponent implements OnInit {
   onSubmit() {
     this.getUsername()
     console.log(this.file)
-    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()){
+    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
         username: this.username,
         status: "pending",
         firstname: this.firstname,
-        middlename: this.middlename,
+        middlename: typeof this.middlename === "undefined" ? "" : this.middlename,
         lastname: this.lastname,
         state: this.state,
         city: this.city,
@@ -108,7 +108,7 @@ export class TraineeSukanyaRegComponent implements OnInit {
         pan: this.pan,
         education: this.education,
         gfirstname: this.gfirstname,
-        gmiddlename: this.gmiddlename,
+        gmiddlename: typeof this.gmiddlename === "undefined" ? "" : this.gmiddlename,
         glastname: this.glastname,
         // gstate: this.gstate,
         // gcity: this.gcity,

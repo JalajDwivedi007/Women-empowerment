@@ -40,21 +40,21 @@ export class TraineeHostelRegComponent implements OnInit {
     this.username = this.loginService.getUsername();
     console.log(this.username);
   }
-  checkMobile(){
+  checkMobile() {
     console.log(this.gMobile);
-    if(!/^[6-9]\d{9}$/.test(this.gMobile.toString())){
+    if (!/^[6-9]\d{9}$/.test(this.gMobile.toString())) {
       alert('Mention correct Mobile Number');
       return false;
     }
     if (typeof this.gMobile === "undefined") {
-       alert('undefined');
-       return false;
-     }
+      alert('undefined');
+      return false;
+    }
     return true;
- }
-  checkPan(){
+  }
+  checkPan() {
     console.log(this.traineePan)
-    if(!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(this.traineePan)){
+    if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(this.traineePan)) {
       alert('Mention correct Pan');
       return false;
     }
@@ -62,8 +62,8 @@ export class TraineeHostelRegComponent implements OnInit {
       alert('undefined');
       return false;
     }
-    return true; 
-    }
+    return true;
+  }
   checkAadhar() {
     console.log(this.traineeAadhaar)
     if (!/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(this.traineeAadhaar.toString())) {
@@ -90,7 +90,7 @@ export class TraineeHostelRegComponent implements OnInit {
   onSubmit() {
     this.usernameSet()
     console.log(this.file)
-    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()){
+    if (this.checkEmail() && this.checkAadhar() && this.checkPan() && this.checkMobile()) {
       let data = {
         username: this.username,
         status: "pending",
@@ -99,7 +99,7 @@ export class TraineeHostelRegComponent implements OnInit {
         hRanBy: this.hRanBy,
         file: this.file,
         firstname: this.firstname,
-        middlename: this.middlename,
+        middlename: typeof this.middlename === "undefined" ? "" : this.middlename,
         lastname: this.lastname,
         state: this.state,
         city: this.city,
@@ -108,19 +108,19 @@ export class TraineeHostelRegComponent implements OnInit {
         traineeEducation: this.traineeEducation,
         traineeAadhaar: this.traineeAadhaar,
         gFirstname: this.gFirstname,
-        gMiddlename: this.gMiddlename,
+        gMiddlename: typeof this.gMiddlename === "undefined" ? "" : this.gMiddlename,
         gLastname: this.gLastname,
         gEducationDetails: this.gEducationDetails,
         gRelation: this.gRelation,
         gMobile: this.gMobile,
         gEmail: this.gEmail
-    };
-    this.hostelService.postData(data).subscribe((res) => {
-      // console.log(res);
-      this.getInfo();
-      alert('Details Submitted Successfully!')
-      this.router.navigate(['trainee-info'])
-    })
+      };
+      this.hostelService.postData(data).subscribe((res) => {
+        // console.log(res);
+        this.getInfo();
+        alert('Details Submitted Successfully!')
+        this.router.navigate(['trainee-info'])
+      })
     }
   }
   getInfo() {

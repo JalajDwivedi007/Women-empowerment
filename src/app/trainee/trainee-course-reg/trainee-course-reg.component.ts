@@ -37,7 +37,7 @@ export class TraineeCourseRegComponent implements OnInit {
     private courseService: CourseTraineeService,
     private loginService: LoginSignupApprovalService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getInfo();
@@ -118,7 +118,7 @@ export class TraineeCourseRegComponent implements OnInit {
         username: this.username,
         status: 'pending',
         firstname: this.firstname,
-        middlename: this.middlename,
+        middlename: typeof this.middlename === "undefined" ? "" : this.middlename,
         lastname: this.lastname,
         state: this.state,
         city: this.city,
@@ -127,7 +127,7 @@ export class TraineeCourseRegComponent implements OnInit {
         pan: this.pan,
         education: this.education,
         gfirstname: this.gfirstname,
-        gmiddlename: this.gmiddlename,
+        gmiddlename: typeof this.gmiddlename === "undefined" ? "" : this.gmiddlename,
         glastname: this.glastname,
         geducation: this.geducation,
         grelation: this.grelation,
